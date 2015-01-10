@@ -1,4 +1,4 @@
-" Vimlander colorscheme, a yellowish mix of Tomorrow-Night-Eighties & outlander.
+" Yowish colorscheme.
 " Version: 0.1
 
 " Creation     : 2015-01-09
