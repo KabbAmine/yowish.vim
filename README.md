@@ -4,8 +4,8 @@
 
 Yowish is an [outlander-like](https://atom.io/themes/outlander-syntax) color scheme for [Vim](http://vim.org) (Only GUI for the moment).
 
-It have a custom colors for [NERDTree](https://github.com/scrooloose/nerdtree) & [Undotree](https://github.com/mbbill/undotree).
-And supports for now the following file types:
+It have a custom colors for [NERDTree](https://github.com/scrooloose/nerdtree).
+It looks good in any file type but his beauty is better shown in the following ones:
 
 - `HTML` & `CSS`
 - `SASS` & `SCSS`
@@ -40,13 +40,15 @@ Or in a better way, use a vim plugin manager:
 
 ## Notes
 
-Being the 1^st^ vim scheme that I'm developing, feel free to report issues and PR.
+Being the 1st vim colorscheme that I'm developing, feel free to report issues and PR.
 
 ## Todo
 
-- Add terminal support (256?).
-- Add other files types (`js`, `python`, `c`, `java`...).
-- If possible, add better colors for plugins ([Airline](https://github.com/bling/vim-airline), [CtrlP](https://github.com/ctrlpvim/ctrlp.vim), [Tagbar](https://github.com/majutsushi/tagbar)...).
+- Tterminal support (256).
+- Better support for `javascript`, `python`, `c` and `java`...
+- Better colors for plugins:
+	- [Airline](https://github.com/bling/vim-airline)
+	- [CtrlP](https://github.com/ctrlpvim/ctrlp.vim)
 
 ## Thanks
 
