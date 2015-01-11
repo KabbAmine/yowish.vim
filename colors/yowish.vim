@@ -300,3 +300,12 @@ hi! link NERDtreeHelpKey NERDtreeFile
 hi! link NERDtreeHelpTitle NERDtreeHelp
 hi! link NERDtreeOpenable NERDtreeDirSlash
 " }
+
+" For CtrlP plugin {
+call s:Hi('CtrlPLinePre'   , 'NONE' , s:cText       , 'NONE')
+call s:Hi('CtrlPMatch'     , 'NONE' , s:lightYellow , 'bold')
+call s:Hi('CtrlPMode1'     , 'NONE' , s:cTextDark   , 'NONE')
+call s:Hi('CtrlPNoEntries' , 'NONE' , s:red         , 'bold')
+call s:Hi('CtrlPPrtCursor' , 'NONE' , s:lightYellow , 'underline')
+hi! link CtrlPPrtBase CtrlPMatch
+" }
