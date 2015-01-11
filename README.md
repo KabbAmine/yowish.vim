@@ -48,7 +48,6 @@ Being the 1st vim colorscheme that I'm developing, feel free to report issues an
 - Better support for `javascript`, `python`, `c` and `java`...
 - Better colors for plugins:
 	- [Airline](https://github.com/bling/vim-airline)
-	- [CtrlP](https://github.com/ctrlpvim/ctrlp.vim)
 
 ## Thanks
 
