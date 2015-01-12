@@ -2,7 +2,7 @@
 " Version: 0.2
 
 " Creation     : 2015-01-09
-" Modification : 2015-01-11
+" Modification : 2015-01-12
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -61,7 +61,6 @@ let s:lightGreen = '#99cc99'
 let s:lightYellow = '#ffcc66'
 let s:lightBlue = '#6699cc'
 let s:lightViolet = '#d09cea'
-let s:lightOrange = '#ffcc66'
 " }
 
 " *********************
