@@ -106,7 +106,7 @@ call s:Hi('Title'        , 'NONE'              , s:lightRed         , 'NONE')
 call s:Hi('Todo'         , 'NONE'              , s:yellow           , 'NONE')
 call s:Hi('Type'         , 'NONE'              , s:cTextDark        , 'NONE')
 call s:Hi('VertSplit'    , 'NONE'              , s:yellow           , 'NONE')
-call s:Hi('Visual'       , s:cSelected         , s:cTextLight       , 'NONE')
+call s:Hi('Visual'       , s:cSelected         , 'NONE'             , 'NONE')
 call s:Hi('WarningMsg'   , 'NONE'              , s:yellow           , 'bold')
 call s:Hi('WildMenu'     , s:cBackground       , s:yellow           , 'NONE')
 hi! link CursorColumn CursorLine
