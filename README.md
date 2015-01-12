@@ -2,7 +2,7 @@
 
 ## Description
 
-Yowish is an [outlander-like](https://atom.io/themes/outlander-syntax) colorscheme for [Vim](http://vim.org) (Only GUI for the moment).
+Yowish is an [outlander-like](https://atom.io/themes/outlander-syntax) colorscheme for [Vim](http://vim.org) (GUI & 256-terminal).
 
 It should be good in any file type but his beauty is better shown in the following ones:
 
@@ -22,7 +22,11 @@ It should be good in any file type but his beauty is better shown in the followi
 
 It have a custom colors for [CtrlP](https://github.com/ctrlpvim/ctrlp.vim) and [NERDTree](https://github.com/scrooloose/nerdtree) (As shown in the previous screen).
 
-And have a specific theme for [airline](https://github.com/bling/vim-airline).
+The colors in 256-terminal version are quite similar to the ones in GUI version:
+
+![GUI vs Terminal](.img/term-vs-gui.png)
+
+It have a specific theme for [airline](https://github.com/bling/vim-airline).
 
 ![Yowish theme for Airline](.img/airline.jpg)
 
@@ -46,7 +50,6 @@ And if you're asking yourself, yeah I like yellow color :smile:
 
 ## Todo
 
-- Terminal support (256).
 - Better support for `javascript`, `python`, `c` and `java`...
 
 ## Thanks
