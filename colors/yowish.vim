@@ -45,7 +45,6 @@ let s:cText = '#cbcbcb'
 let s:cTextDark = '#bebebe'
 let s:cTextExtraDark = '#8c8c8c'
 let s:cTextLight = '#ebebeb'
-let s:cCursor = '#151515'
 let s:cSelected = '#373B41'
 let s:cColumnBackground = s:cBackground
 let s:cColumnElements = '#6e6e6e'
@@ -73,7 +72,7 @@ call s:Hi('Conceal'      , 'NONE'              , s:cBackgroundLight , 'NONE')
 call s:Hi('Constant'     , 'NONE'              , s:lightRed         , 'NONE')
 call s:Hi('CursorLineNr' , 'NONE'              , s:lightYellow      , 'NONE')
 call s:Hi('CursorLine'   , s:cBackgroundLight  , 'NONE'             , 'NONE')
-call s:Hi('Cursor'       , s:cCursor           , 'NONE'             , 'NONE')
+call s:Hi('Cursor'       , s:cText             , s:cBackgroundDark  , 'NONE')
 call s:Hi('DiffAdd'      , 'NONE'              , s:green            , 'NONE')
 call s:Hi('DiffChange'   , 'NONE'              , s:yellow           , 'NONE')
 call s:Hi('DiffDelete'   , 'NONE'              , s:red              , 'NONE')
