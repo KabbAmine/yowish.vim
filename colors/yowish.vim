@@ -1,5 +1,5 @@
 " Yowish colorscheme.
-" Version: 0.2
+" Version: 0.3
 
 " Creation     : 2015-01-09
 " Modification : 2015-01-13
@@ -23,7 +23,7 @@ function! s:Hi(groupName, ...)
 	
 	let l:params = ['guibg', 'guifg', 'gui', 'ctermbg', 'ctermfg', 'cterm']
 	let l:command = 'hi ' . a:groupName
-	if (len(a:000) < 1) || (len(a:000) > (len(params)))
+	if (len(a:000) < 1) || (len(a:000) > (len(l:params)))
 		echoerr "Arguments passed are wrong"
 	else
 		for i in range(0,len(a:000)-1)
