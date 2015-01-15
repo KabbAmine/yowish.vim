@@ -2,7 +2,7 @@
 " Version: 0.3
 
 " Creation     : 2015-01-09
-" Modification : 2015-01-13
+" Modification : 2015-01-16
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -258,7 +258,7 @@ hi! link phpVarSelector phpIdentifier
 " Markdown {
 call s:Hi('markdownCodeBlock'   , 'NONE' , s:cTextExtraDark[0] , 'NONE'      , 'NONE' , s:cTextExtraDark[1] , 'NONE')
 call s:Hi('markdownCode'        , 'NONE' , s:lightBlue[0]      , 'NONE'      , 'NONE' , s:lightBlue[1]      , 'NONE')
-call s:Hi('markdownH0'          , 'NONE' , s:cTextLight[0]     , 'bold'      , 'NONE' , s:cTextLight[1]     , 'bold')
+call s:Hi('markdownH1'          , 'NONE' , s:cTextLight[0]     , 'bold'      , 'NONE' , s:cTextLight[1]     , 'bold')
 call s:Hi('markdownHeadingRule' , 'NONE' , s:lightViolet[0]    , 'bold'      , 'NONE' , s:lightViolet[1]    , 'bold')
 call s:Hi('markdownLinkText'    , 'NONE' , s:lightBlue[0]      , 'underline' , 'NONE' , s:lightBlue[1]      , 'underline')
 call s:Hi('markdownListMarker'  , 'NONE' , s:lightRed[0]       , 'NONE'      , 'NONE' , s:lightRed[1]       , 'NONE')
