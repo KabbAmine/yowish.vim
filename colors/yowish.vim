@@ -38,28 +38,28 @@ endfunc
 " *********************
 
 " Colors[hex, term256] {
-let s:cBackground       = ['#222222', '235']
-let s:cBackgroundDark   = ['#0e0e0e', '232']
-let s:cBackgroundLight  = ['#393939', '236']
-let s:cText             = ['#cbcbcb', '251']
-let s:cTextDark         = ['#bebebe', '249']
-let s:cTextExtraDark    = ['#8c8c8c', '244']
-let s:cTextLight        = ['#ebebeb', '255']
-let s:cSelected         = ['#373B41', '234']
+let s:cBackground       = variables#colors#cBackground
+let s:cBackgroundDark   = variables#colors#cBackgroundDark
+let s:cBackgroundLight  = variables#colors#cBackgroundLight
+let s:cText             = variables#colors#cText
+let s:cTextDark         = variables#colors#cTextDark
+let s:cTextExtraDark    = variables#colors#cTextExtraDark
+let s:cTextLight        = variables#colors#cTextLight
+let s:cSelected         = variables#colors#cSelected
 let s:cColumnBackground = s:cBackground
-let s:cColumnElements   = ['#6e6e6e', '242']
+let s:cColumnElements   = variables#colors#cColumnElements
 
-let s:cComment          = ['#6e6e6e', '242']
+let s:cComment          = variables#colors#cComment
 
-let s:red               = ['#f01d22', '160']
-let s:green             = ['#2acf2a', '40']
-let s:yellow            = ['#ffbe3c', '215']
+let s:red               = variables#colors#red
+let s:green             = variables#colors#green
+let s:yellow            = variables#colors#yellow
 
-let s:lightRed          = ['#f2777a', '203']
-let s:lightGreen        = ['#99cc99', '108']
-let s:lightYellow       = ['#ffcc66', '222']
-let s:lightBlue         = ['#6699cc', '67']
-let s:lightViolet       = ['#d09cea', '171']
+let s:lightRed          = variables#colors#lightRed
+let s:lightGreen        = variables#colors#lightGreen
+let s:lightYellow       = variables#colors#lightYellow
+let s:lightBlue         = variables#colors#lightBlue
+let s:lightViolet       = variables#colors#lightViolet
 " }
 
 " *********************
