@@ -237,7 +237,7 @@ hi! link sassProp cssProp
 " }
 
 " PHP {
-call s:Hi('phpIdentifier'     , 'NONE' , s:lightRed[0]    , 'NONE' , 'NONE' , s:lightRed[1]    , 'NONE')
+call s:Hi('phpIdentifier'     , 'NONE' , s:cTextLight[0]  , 'NONE' , 'NONE' , s:cTextLight[1]  , 'NONE')
 call s:Hi('phpInclude'        , 'NONE' , s:lightYellow[0] , 'bold' , 'NONE' , s:lightYellow[1] , 'bold')
 call s:Hi('phpKeyword'        , 'NONE' , s:lightViolet[0] , 'NONE' , 'NONE' , s:lightViolet[1] , 'NONE')
 call s:Hi('phpMemberSelector' , 'NONE' , s:lightYellow[0] , 'NONE' , 'NONE' , s:lightYellow[1] , 'NONE')
@@ -247,12 +247,12 @@ call s:Hi('phpStringDouble'   , 'NONE' , s:cTextDark[0]   , 'NONE' , 'NONE' , s:
 call s:Hi('phpStringSingle'   , 'NONE' , s:lightGreen[0]  , 'NONE' , 'NONE' , s:lightGreen[1]  , 'NONE')
 call s:Hi('phpSuperglobals'   , 'NONE' , s:lightRed[0]    , 'bold' , 'NONE' , s:lightRed[1]    , 'bold')
 call s:Hi('phpType'           , 'NONE' , s:lightBlue[0]   , 'NONE' , 'NONE' , s:lightBlue[1]   , 'NONE')
+call s:Hi('phpVarSelector'    , 'NONE' , s:lightRed[0]    , 'NONE' , 'NONE' , s:lightRed[1]    , 'NONE')
 hi! link phpFunctions phpRegion
 hi! link phpOperator Delimiter
 hi! link phpStaticClasses phpSuperglobals
 hi! link phpStrEsc phpMemberSelector
 hi! link phpStringDelimiter phpStringSingle
-hi! link phpVarSelector phpIdentifier
 " }
 
 " Markdown {
