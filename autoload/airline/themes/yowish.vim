@@ -10,28 +10,28 @@
 " *********************
 
 " Colors[hex, term256] {
-let s:cBackground       = variables#colors#cBackground
-let s:cBackgroundDark   = variables#colors#cBackgroundDark
-let s:cBackgroundLight  = variables#colors#cBackgroundLight
-let s:cText             = variables#colors#cText
-let s:cTextDark         = variables#colors#cTextDark
-let s:cTextExtraDark    = variables#colors#cTextExtraDark
-let s:cTextLight        = variables#colors#cTextLight
-let s:cSelected         = variables#colors#cSelected
+let s:cBackground       = yowish#colors#cBackground
+let s:cBackgroundDark   = yowish#colors#cBackgroundDark
+let s:cBackgroundLight  = yowish#colors#cBackgroundLight
+let s:cText             = yowish#colors#cText
+let s:cTextDark         = yowish#colors#cTextDark
+let s:cTextExtraDark    = yowish#colors#cTextExtraDark
+let s:cTextLight        = yowish#colors#cTextLight
+let s:cSelected         = yowish#colors#cSelected
 let s:cColumnBackground = s:cBackground
-let s:cColumnElements   = variables#colors#cColumnElements
+let s:cColumnElements   = yowish#colors#cColumnElements
 
-let s:cComment          = variables#colors#cComment
+let s:cComment          = yowish#colors#cComment
 
-let s:red               = variables#colors#red
-let s:green             = variables#colors#green
-let s:yellow            = variables#colors#yellow
+let s:red               = yowish#colors#red
+let s:green             = yowish#colors#green
+let s:yellow            = yowish#colors#yellow
 
-let s:lightRed          = variables#colors#lightRed
-let s:lightGreen        = variables#colors#lightGreen
-let s:lightYellow       = variables#colors#lightYellow
-let s:lightBlue         = variables#colors#lightBlue
-let s:lightViolet       = variables#colors#lightViolet
+let s:lightRed          = yowish#colors#lightRed
+let s:lightGreen        = yowish#colors#lightGreen
+let s:lightYellow       = yowish#colors#lightYellow
+let s:lightBlue         = yowish#colors#lightBlue
+let s:lightViolet       = yowish#colors#lightViolet
 " }
 
 " *********************
