@@ -1,7 +1,7 @@
 " Yowish airline theme.
 
 " Creation     : 2015-01-12
-" Modification : 2015-01-13
+" Modification : 2015-01-24
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -80,9 +80,9 @@ let g:airline#themes#yowish#palette.visual_modified = {
 			\ }
 
 " Inactive(s) window(s).
-let s:IA1 = [ s:cBackgroundLight[0] , 'NONE' , s:cBackgroundLight[1] , 'NONE' , '' ]
-let s:IA2 = [ s:cBackgroundLight[0] , 'NONE' , s:cBackgroundLight[1] , 'NONE' , '' ]
-let s:IA3 = [ s:cBackgroundLight[0] , 'NONE' , s:cBackgroundLight[1] , 'NONE' , '' ]
+let s:IA1 = [ s:cBackgroundLight[0] , s:cBackgroundDark[0] , s:cBackgroundLight[1] , s:cBackgroundDark[1] , '' ]
+let s:IA2 = [ s:cBackgroundLight[0] , s:cBackgroundDark[0] , s:cBackgroundLight[1] , s:cBackgroundDark[1] , '' ]
+let s:IA3 = [ s:cBackgroundLight[0] , s:cBackgroundDark[0] , s:cBackgroundLight[1] , s:cBackgroundDark[1] , '' ]
 let g:airline#themes#yowish#palette.inactive = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
 let g:airline#themes#yowish#palette.inactive_modified = {
 			\ 'airline_c': [ s:cTextExtraDark[0] , 'NONE' ,s:cTextExtraDark[1] , 'NONE' , 'bold' ] ,
