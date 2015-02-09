@@ -2,7 +2,7 @@
 " Version: 0.4
 
 " Creation     : 2015-01-09
-" Modification : 2015-01-24
+" Modification : 2015-02-09
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -63,7 +63,7 @@ call yowish#lib#hi('ErrorMsg'     , s:red               , s:cText            , '
 call yowish#lib#hi('Error'        , 'NONE'              , s:red              , 'bold')
 call yowish#lib#hi('FoldColumn'   , s:cColumnBackground , s:cColumnElements  , 'NONE')
 call yowish#lib#hi('Identifier'   , 'NONE'              , s:lightBlue        , 'NONE')
-call yowish#lib#hi('IncSearch'    , s:yellow            , s:cBackground      , 'bold')
+call yowish#lib#hi('IncSearch'    , s:lightYellow       , s:cBackground      , 'NONE')
 call yowish#lib#hi('LineNr'       , 'NONE'              , s:cBackgroundLight , 'NONE')
 call yowish#lib#hi('MatchParen'   , 'NONE'              , s:yellow           , 'bold')
 call yowish#lib#hi('ModeMsg'      , 'NONE'              , s:yellow           , 'bold')
@@ -73,7 +73,7 @@ call yowish#lib#hi('Pmenu'        , s:cBackgroundLight  , s:cTextDark        , '
 call yowish#lib#hi('PmenuSel'     , s:cBackground       , s:cText            , 'NONE')
 call yowish#lib#hi('PreProc'      , 'NONE'              , s:lightViolet      , 'NONE')
 call yowish#lib#hi('Question'     , 'NONE'              , s:lightGreen       , 'bold')
-call yowish#lib#hi('Search'       , 'black'             , s:lightYellow      , 'bold')
+call yowish#lib#hi('Search'       , s:yellow            , s:cBackgroundDark  , 'bold')
 call yowish#lib#hi('SpecialKey'   , 'NONE'              , s:cBackgroundLight , 'NONE')
 call yowish#lib#hi('Special'      , 'NONE'              , s:cTextLight       , 'NONE')
 call yowish#lib#hi('SpellBad'     , 'NONE'              , 'NONE'             , 'undercurl')
