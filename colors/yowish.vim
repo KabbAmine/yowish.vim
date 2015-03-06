@@ -2,7 +2,7 @@
 " Version: 0.4
 
 " Creation     : 2015-01-09
-" Modification : 2015-02-09
+" Modification : 2015-03-06
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -106,7 +106,8 @@ call yowish#lib#hi('vimOper'      , 'NONE' , s:cText          , 'NONE')
 call yowish#lib#hi('vimOption'    , 'NONE' , s:lightViolet    , 'NONE')
 call yowish#lib#hi('vimString'    , 'NONE' , s:lightGreen     , 'NONE')
 hi! link vimComment Comment
-hi! link VimCommentTitle Comment
+hi! link vimCommentString Comment
+hi! link vimCommentTitle Comment
 hi! link vimEchoHLNone vimOper
 hi! link vimEnvvar vimOption
 hi! link vimFuncVar vimVar
