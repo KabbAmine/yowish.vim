@@ -2,7 +2,7 @@
 " Version: 0.4
 
 " Creation     : 2015-01-09
-" Modification : 2015-03-06
+" Modification : 2015-03-15
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -219,7 +219,7 @@ hi! link sassProp cssProp
 " }
 
 " PHP {
-call yowish#lib#hi('phpIdentifier'     , 'NONE' , s:cTextLight  , 'NONE')
+call yowish#lib#hi('phpIdentifier'     , 'NONE' , s:lightRed  , 'NONE')
 call yowish#lib#hi('phpInclude'        , 'NONE' , s:lightYellow , 'bold')
 call yowish#lib#hi('phpKeyword'        , 'NONE' , s:lightViolet , 'NONE')
 call yowish#lib#hi('phpMemberSelector' , 'NONE' , s:lightYellow , 'NONE')
