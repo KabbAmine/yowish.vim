@@ -1,52 +1,46 @@
 " Yowish colorscheme.
-" Version: 0.4
 
 " Creation     : 2015-01-09
 " Modification : 2015-03-15
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
+" Initialization {{{1
 set background=dark
 hi clear
 if exists("syntax_on")
 	syntax reset
 endif
-
 let g:colors_name = "yowish"
+" 1}}}
 
-" *********************
-" Colors
-" *********************
-
-" Colors[hex, term256] {
-let s:cBackground       = ['#222222', '235']
-let s:cBackgroundDark   = ['#0e0e0e', '232']
-let s:cBackgroundLight  = ['#393939', '236']
-let s:cText             = ['#cbcbcb', '251']
-let s:cTextDark         = ['#bebebe', '249']
-let s:cTextExtraDark    = ['#8c8c8c', '244']
-let s:cTextLight        = ['#ebebeb', '255']
-let s:cSelected         = ['#373B41', '234']
-let s:cColumnBackground = s:cBackground
-let s:cColumnElements   = ['#6e6e6e', '242']
-
-let s:cComment          = ['#6e6e6e', '242']
-
-let s:red               = ['#f01d22', '160']
-let s:green             = ['#2acf2a', '40']
-let s:yellow            = ['#ffbe3c', '215']
-
-let s:lightRed          = ['#f2777a', '203']
-let s:lightGreen        = ['#99cc99', '108']
-let s:lightYellow       = ['#ffcc66', '222']
-let s:lightBlue         = ['#6699cc', '67']
-let s:lightViolet       = ['#d09cea', '171']
-" }
-
-fun! <SID>hi(groupName, bgColor, fgColor, option)
+" Colors (.group[hex, term256]) {{{1
+let s:color = {
+			\ 'Background'       : ['#222222', '235'],
+			\ 'BackgroundDark'   : ['#0e0e0e', '232'],
+			\ 'BackgroundLight'  : ['#393939', '236'],
+			\ 'Text'             : ['#cbcbcb', '251'],
+			\ 'TextDark'         : ['#bebebe', '249'],
+			\ 'TextExtraDark'    : ['#8c8c8c', '244'],
+			\ 'TextLight'        : ['#ebebeb', '255'],
+			\ 'Selected'         : ['#373B41', '234'],
+			\ 'ColumnBackground' : ['#222222', '235'],
+			\ 'ColumnElements'   : ['#6e6e6e', '242'],
+			\ 'Comment'          : ['#6e6e6e', '242'],
+			\ 'red'              : ['#f01d22', '160'],
+			\ 'green'            : ['#2acf2a', '40'],
+			\ 'yellow'           : ['#ffbe3c', '215'],
+			\ 'lightRed'         : ['#f2777a', '203'],
+			\ 'lightGreen'       : ['#99cc99', '108'],
+			\ 'lightYellow'      : ['#ffcc66', '222'],
+			\ 'lightBlue'        : ['#6699cc', '67'],
+			\ 'lightViolet'      : ['#d09cea', '171']
+			\ }
+" Highlighting function {{{1
+fun! s:Hi(groupName, bgColor, fgColor, option)
 	" Set higlighting colors of specified group name
-	let l:bgColor = type(a:bgColor) == type('NONE') ? ['NONE', 'NONE'] : a:bgColor
-	let l:fgColor = type(a:fgColor) == type('NONE') ? ['NONE', 'NONE'] : a:fgColor
+	let l:bgColor = type(a:bgColor) ==# type('') ? ['NONE', 'NONE'] : a:bgColor
+	let l:fgColor = type(a:fgColor) ==# type('') ? ['NONE', 'NONE'] : a:fgColor
 	let l:command = 'hi ' . a:groupName
 	let l:params = ['gui', 'cterm']
 	for i in (range(0, len(l:params)-1))
@@ -55,69 +49,68 @@ fun! <SID>hi(groupName, bgColor, fgColor, option)
 	endfor
 	exe l:command
 endfun
+" 1}}}
 
 " *********************
 " Highlighting
 " *********************
 
-" Default {
-call <SID>hi('Comment'      , 'NONE'              , s:cComment         , 'NONE')
-call <SID>hi('Conceal'      , 'NONE'              , s:cBackgroundLight , 'NONE')
-call <SID>hi('Constant'     , 'NONE'              , s:lightRed         , 'NONE')
-call <SID>hi('CursorLineNr' , 'NONE'              , s:lightYellow      , 'NONE')
-call <SID>hi('CursorLine'   , s:cBackgroundLight  , 'NONE'             , 'NONE')
-call <SID>hi('Cursor'       , s:cText             , s:cBackgroundDark  , 'NONE')
-call <SID>hi('DiffAdd'      , 'NONE'              , s:green            , 'NONE')
-call <SID>hi('DiffChange'   , 'NONE'              , s:yellow           , 'NONE')
-call <SID>hi('DiffDelete'   , 'NONE'              , s:red              , 'NONE')
-call <SID>hi('DiffText'     , 'NONE'              , s:cTextDark        , 'NONE')
-call <SID>hi('Directory'    , 'NONE'              , s:cTextDark        , 'NONE')
-call <SID>hi('ErrorMsg'     , s:red               , s:cText            , 'bold')
-call <SID>hi('Error'        , 'NONE'              , s:red              , 'bold')
-call <SID>hi('FoldColumn'   , s:cColumnBackground , s:cColumnElements  , 'NONE')
-call <SID>hi('Identifier'   , 'NONE'              , s:lightBlue        , 'NONE')
-call <SID>hi('IncSearch'    , s:lightYellow       , s:cBackground      , 'NONE')
-call <SID>hi('LineNr'       , 'NONE'              , s:cBackgroundLight , 'NONE')
-call <SID>hi('MatchParen'   , 'NONE'              , s:yellow           , 'bold')
-call <SID>hi('ModeMsg'      , 'NONE'              , s:yellow           , 'bold')
-call <SID>hi('Normal'       , s:cBackground       , s:cText            , 'NONE')
-call <SID>hi('PmenuSbar'    , s:cSelected         , s:lightYellow      , 'NONE')
-call <SID>hi('Pmenu'        , s:cBackgroundLight  , s:cTextDark        , 'NONE')
-call <SID>hi('PmenuSel'     , s:cBackground       , s:cText            , 'NONE')
-call <SID>hi('PreProc'      , 'NONE'              , s:lightViolet      , 'NONE')
-call <SID>hi('Question'     , 'NONE'              , s:lightGreen       , 'bold')
-call <SID>hi('Search'       , s:yellow            , s:cBackgroundDark  , 'bold')
-call <SID>hi('SpecialKey'   , 'NONE'              , s:cBackgroundLight , 'NONE')
-call <SID>hi('Special'      , 'NONE'              , s:cTextLight       , 'NONE')
-call <SID>hi('SpellBad'     , 'NONE'              , 'NONE'             , 'undercurl')
-call <SID>hi('Statement'    , 'NONE'              , s:lightYellow      , 'NONE')
-call <SID>hi('StatusLineNC' , s:cBackgroundLight  , s:cText            , 'NONE')
-call <SID>hi('StatusLine'   , s:yellow            , s:cBackground      , 'NONE')
-call <SID>hi('TabLineFill'  , 'NONE'              , s:cText            , 'NONE')
-call <SID>hi('TabLine'      , s:cBackgroundLight  , s:cTextDark        , 'NONE')
-call <SID>hi('TabLineSel'   , s:cBackground       , s:yellow           , 'bold')
-call <SID>hi('Title'        , 'NONE'              , s:lightRed         , 'NONE')
-call <SID>hi('Todo'         , 'NONE'              , s:yellow           , 'NONE')
-call <SID>hi('Type'         , 'NONE'              , s:cTextDark        , 'NONE')
-call <SID>hi('VertSplit'    , 'NONE'              , s:yellow           , 'NONE')
-call <SID>hi('Visual'       , s:cSelected         , 'NONE'             , 'NONE')
-call <SID>hi('WarningMsg'   , 'NONE'              , s:yellow           , 'bold')
-call <SID>hi('WildMenu'     , s:cBackground       , s:yellow           , 'NONE')
+" Default {{{1
+call s:Hi('Comment'      , 'NONE'                   , s:color.Comment         , 'NONE')
+call s:Hi('Conceal'      , 'NONE'                   , s:color.BackgroundLight , 'NONE')
+call s:Hi('Constant'     , 'NONE'                   , s:color.lightRed        , 'NONE')
+call s:Hi('CursorLineNr' , 'NONE'                   , s:color.lightYellow     , 'NONE')
+call s:Hi('CursorLine'   , s:color.BackgroundLight  , 'NONE'                  , 'NONE')
+call s:Hi('Cursor'       , s:color.Text             , s:color.BackgroundDark  , 'NONE')
+call s:Hi('DiffAdd'      , 'NONE'                   , s:color.green           , 'NONE')
+call s:Hi('DiffChange'   , 'NONE'                   , s:color.yellow          , 'NONE')
+call s:Hi('DiffDelete'   , 'NONE'                   , s:color.red             , 'NONE')
+call s:Hi('DiffText'     , 'NONE'                   , s:color.TextDark        , 'NONE')
+call s:Hi('Directory'    , 'NONE'                   , s:color.TextDark        , 'NONE')
+call s:Hi('ErrorMsg'     , s:color.red              , s:color.Text            , 'bold')
+call s:Hi('Error'        , 'NONE'                   , s:color.red             , 'bold')
+call s:Hi('FoldColumn'   , s:color.ColumnBackground , s:color.ColumnElements  , 'NONE')
+call s:Hi('Identifier'   , 'NONE'                   , s:color.lightBlue       , 'NONE')
+call s:Hi('IncSearch'    , s:color.lightYellow      , s:color.Background      , 'NONE')
+call s:Hi('LineNr'       , 'NONE'                   , s:color.BackgroundLight , 'NONE')
+call s:Hi('MatchParen'   , 'NONE'                   , s:color.yellow          , 'bold')
+call s:Hi('ModeMsg'      , 'NONE'                   , s:color.yellow          , 'bold')
+call s:Hi('Normal'       , s:color.Background       , s:color.Text            , 'NONE')
+call s:Hi('PmenuSbar'    , s:color.Selected         , s:color.lightYellow     , 'NONE')
+call s:Hi('Pmenu'        , s:color.BackgroundLight  , s:color.TextDark        , 'NONE')
+call s:Hi('PmenuSel'     , s:color.Background       , s:color.Text            , 'NONE')
+call s:Hi('PreProc'      , 'NONE'                   , s:color.lightViolet     , 'NONE')
+call s:Hi('Question'     , 'NONE'                   , s:color.lightGreen      , 'bold')
+call s:Hi('Search'       , s:color.yellow           , s:color.BackgroundDark  , 'bold')
+call s:Hi('SpecialKey'   , 'NONE'                   , s:color.BackgroundLight , 'NONE')
+call s:Hi('Special'      , 'NONE'                   , s:color.TextLight       , 'NONE')
+call s:Hi('SpellBad'     , 'NONE'                   , 'NONE'                  , 'undercurl')
+call s:Hi('Statement'    , 'NONE'                   , s:color.lightYellow     , 'NONE')
+call s:Hi('StatusLineNC' , s:color.BackgroundLight  , s:color.Text            , 'NONE')
+call s:Hi('StatusLine'   , s:color.yellow           , s:color.Background      , 'NONE')
+call s:Hi('TabLineFill'  , 'NONE'                   , s:color.Text            , 'NONE')
+call s:Hi('TabLine'      , s:color.BackgroundLight  , s:color.TextDark        , 'NONE')
+call s:Hi('TabLineSel'   , s:color.Background       , s:color.yellow          , 'bold')
+call s:Hi('Title'        , 'NONE'                   , s:color.lightRed        , 'NONE')
+call s:Hi('Todo'         , 'NONE'                   , s:color.yellow          , 'NONE')
+call s:Hi('Type'         , 'NONE'                   , s:color.TextDark        , 'NONE')
+call s:Hi('VertSplit'    , 'NONE'                   , s:color.yellow          , 'NONE')
+call s:Hi('Visual'       , s:color.Selected         , 'NONE'                  , 'NONE')
+call s:Hi('WarningMsg'   , 'NONE'                   , s:color.yellow          , 'bold')
+call s:Hi('WildMenu'     , s:color.Background       , s:color.yellow          , 'NONE')
 hi! link CursorColumn CursorLine
 hi! link Folded FoldColumn
 hi! link NonText Conceal
 hi! link SignColumn FoldColumn
 hi! link VisualNOS Visual
-" }
-
-" Vim {
-call <SID>hi('vimAutoEvent' , 'NONE' , s:cTextExtraDark , 'NONE')
-call <SID>hi('vimCommand'   , 'NONE' , s:lightRed       , 'NONE')
-call <SID>hi('vimContinue'  , 'NONE' , s:cTextDark      , 'NONE')
-call <SID>hi('vimFuncName'  , 'NONE' , s:lightYellow    , 'NONE')
-call <SID>hi('vimOper'      , 'NONE' , s:cText          , 'NONE')
-call <SID>hi('vimOption'    , 'NONE' , s:lightViolet    , 'NONE')
-call <SID>hi('vimString'    , 'NONE' , s:lightGreen     , 'NONE')
+" Vim {{{1
+call s:Hi('vimAutoEvent' , 'NONE' , s:color.TextExtraDark , 'NONE')
+call s:Hi('vimCommand'   , 'NONE' , s:color.lightRed      , 'NONE')
+call s:Hi('vimContinue'  , 'NONE' , s:color.TextDark      , 'NONE')
+call s:Hi('vimFuncName'  , 'NONE' , s:color.lightYellow   , 'NONE')
+call s:Hi('vimOper'      , 'NONE' , s:color.Text          , 'NONE')
+call s:Hi('vimOption'    , 'NONE' , s:color.lightViolet   , 'NONE')
+call s:Hi('vimString'    , 'NONE' , s:color.lightGreen    , 'NONE')
 hi! link vimComment Comment
 hi! link vimCommentString Comment
 hi! link vimCommentTitle Comment
@@ -140,12 +133,10 @@ hi! link vimUserAttrbCmplt vimContinue
 hi! link vimUserAttrb vimContinue
 hi! link vimUserCmd vimCommand
 hi! link vimVar Identifier
-" }
-"
-" Vimhelp {
-call <SID>hi('helpExample'      , 'NONE' , s:cTextExtraDark , 'NONE')
-call <SID>hi('helpOption'       , 'NONE' , s:cTextExtraDark , 'NONE')
-call <SID>hi('helpSectionDelim' , 'NONE' , s:cTextExtraDark , 'NONE')
+" Vimhelp {{{1
+call s:Hi('helpExample'      , 'NONE' , s:color.TextExtraDark , 'NONE')
+call s:Hi('helpOption'       , 'NONE' , s:color.TextExtraDark , 'NONE')
+call s:Hi('helpSectionDelim' , 'NONE' , s:color.TextExtraDark , 'NONE')
 hi! link helpComment Comment
 hi! link helpConstant Constant
 hi! link helpError Error
@@ -155,19 +146,17 @@ hi! link helpSpecial Special
 hi! link helpStatement Statement
 hi! link helpTodo Todo
 hi! link helpType Type
-" }
-
-" HTML {
-call <SID>hi('HtmlArg'         , 'NONE' , s:lightYellow , 'NONE')
-call <SID>hi('HtmlBold'        , 'NONE' , 'NONE'        , 'bold')
-call <SID>hi('HtmlH1'          , 'NONE' , s:cText       , 'NONE')
-call <SID>hi('HtmlItalic'      , 'NONE' , 'NONE'        , 'italic')
-call <SID>hi('HtmlLink'        , 'NONE' , s:cText       , 'underline')
-call <SID>hi('HtmlSpecialChar' , 'NONE' , s:cTextDark   , 'NONE')
-call <SID>hi('HtmlString'      , 'NONE' , s:lightGreen  , 'NONE')
-call <SID>hi('HtmlTagName'     , 'NONE' , s:lightRed    , 'NONE')
-call <SID>hi('HtmlTitle'       , 'NONE' , s:cText       , 'bold')
-call <SID>hi('HtmlUnderline'   , 'NONE' , 'NONE'        , 'underline')
+" HTML {{{1
+call s:Hi('HtmlArg'         , 'NONE' , s:color.lightYellow , 'NONE')
+call s:Hi('HtmlBold'        , 'NONE' , 'NONE'              , 'bold')
+call s:Hi('HtmlH1'          , 'NONE' , s:color.Text        , 'NONE')
+call s:Hi('HtmlItalic'      , 'NONE' , 'NONE'              , 'italic')
+call s:Hi('HtmlLink'        , 'NONE' , s:color.Text        , 'underline')
+call s:Hi('HtmlSpecialChar' , 'NONE' , s:color.TextDark    , 'NONE')
+call s:Hi('HtmlString'      , 'NONE' , s:color.lightGreen  , 'NONE')
+call s:Hi('HtmlTagName'     , 'NONE' , s:color.lightRed    , 'NONE')
+call s:Hi('HtmlTitle'       , 'NONE' , s:color.Text        , 'bold')
+call s:Hi('HtmlUnderline'   , 'NONE' , 'NONE'              , 'underline')
 hi! link HtmlEndTag HtmlTag
 hi! link HtmlH2 HtmlH1
 hi! link HtmlH3 HtmlH2
@@ -176,23 +165,21 @@ hi! link HtmlH5 HtmlH4
 hi! link HtmlH6 HtmlH5
 hi! link HtmlScriptTag HtmlTagName
 hi! link HtmlSpecialTagName HtmlTagName
-" }
-
-" CSS {
-call <SID>hi('cssAttrComma'    , 'NONE' , s:lightViolet , 'NONE')
-call <SID>hi('cssAttr'         , 'NONE' , s:lightYellow , 'NONE')
-call <SID>hi('cssClassName'    , 'NONE' , s:lightViolet , 'NONE')
-call <SID>hi('cssDefinition'   , 'NONE' , s:lightBlue   , 'NONE')
-call <SID>hi('cssFunction'     , 'NONE' , s:cText       , 'NONE')
-call <SID>hi('cssIdentifier'   , 'NONE' , s:lightViolet , 'bold')
-call <SID>hi('cssImportant'    , 'NONE' , s:lightBlue   , 'italic')
-call <SID>hi('cssMediaKeyword' , 'NONE' , s:cTextLight  , 'bold')
-call <SID>hi('cssMedia'        , 'NONE' , s:cTextLight  , 'NONE')
-call <SID>hi('cssProp'         , 'NONE' , s:lightBlue   , 'NONE')
-call <SID>hi('cssPseudoClass'  , 'NONE' , s:lightRed    , 'NONE')
-call <SID>hi('cssStringQ'      , 'NONE' , s:lightGreen  , 'NONE')
-call <SID>hi('cssTagName'      , 'NONE' , s:cText       , 'bold')
-call <SID>hi('cssValueNumber'  , 'NONE' , s:lightYellow , 'NONE')
+" CSS {{{1
+call s:Hi('cssAttrComma'    , 'NONE' , s:color.lightViolet , 'NONE')
+call s:Hi('cssAttr'         , 'NONE' , s:color.lightYellow , 'NONE')
+call s:Hi('cssClassName'    , 'NONE' , s:color.lightViolet , 'NONE')
+call s:Hi('cssDefinition'   , 'NONE' , s:color.lightBlue   , 'NONE')
+call s:Hi('cssFunction'     , 'NONE' , s:color.Text        , 'NONE')
+call s:Hi('cssIdentifier'   , 'NONE' , s:color.lightViolet , 'bold')
+call s:Hi('cssImportant'    , 'NONE' , s:color.lightBlue   , 'italic')
+call s:Hi('cssMediaKeyword' , 'NONE' , s:color.TextLight   , 'bold')
+call s:Hi('cssMedia'        , 'NONE' , s:color.TextLight   , 'NONE')
+call s:Hi('cssProp'         , 'NONE' , s:color.lightBlue   , 'NONE')
+call s:Hi('cssPseudoClass'  , 'NONE' , s:color.lightRed    , 'NONE')
+call s:Hi('cssStringQ'      , 'NONE' , s:color.lightGreen  , 'NONE')
+call s:Hi('cssTagName'      , 'NONE' , s:color.Text        , 'bold')
+call s:Hi('cssValueNumber'  , 'NONE' , s:color.lightYellow , 'NONE')
 hi! link cssBraces cssTagName
 hi! link cssColor cssValueNumber
 hi! link cssCommonAttr cssValueNumber
@@ -211,14 +198,12 @@ hi! link cssValueFrequency cssValueNumber
 hi! link cssValueInteger cssValueNumber
 hi! link cssValueLength cssValueNumber
 hi! link cssValueTime cssValueNumber
-" }
-
-" SCSS {
-call <SID>hi('sassCssAttribute'           , 'NONE' , s:cTextDark  , 'NONE')
-call <SID>hi('sassDefault'                , 'NONE' , s:lightBlue  , 'italic')
-call <SID>hi('sassInclude'                , 'NONE' , s:cTextLight , 'bold')
-call <SID>hi('sassInterpolationDelimiter' , 'NONE' , s:cTextLight , 'NONE')
-call <SID>hi('sassVariable'               , 'NONE' , s:lightRed   , 'NONE')
+" SCSS {{{1
+call s:Hi('sassCssAttribute'           , 'NONE' , s:color.TextDark  , 'NONE')
+call s:Hi('sassDefault'                , 'NONE' , s:color.lightBlue , 'italic')
+call s:Hi('sassInclude'                , 'NONE' , s:color.TextLight , 'bold')
+call s:Hi('sassInterpolationDelimiter' , 'NONE' , s:color.TextLight , 'NONE')
+call s:Hi('sassVariable'               , 'NONE' , s:color.lightRed  , 'NONE')
 hi! link sassClassChar sassClass
 hi! link sassClass cssClassName
 hi! link sassControl sassInclude
@@ -229,36 +214,32 @@ hi! link sassId cssIdentifier
 hi! link sassMixing sassInclude
 hi! link sassMixin sassInclude
 hi! link sassProp cssProp
-" }
-
-" PHP {
-call <SID>hi('phpIdentifier'     , 'NONE' , s:lightRed  , 'NONE')
-call <SID>hi('phpInclude'        , 'NONE' , s:lightYellow , 'bold')
-call <SID>hi('phpKeyword'        , 'NONE' , s:lightViolet , 'NONE')
-call <SID>hi('phpMemberSelector' , 'NONE' , s:lightYellow , 'NONE')
-call <SID>hi('phpParent'         , 'NONE' , s:cTextDark   , 'NONE')
-call <SID>hi('phpRegion'         , 'NONE' , s:cText       , 'NONE')
-call <SID>hi('phpStringDouble'   , 'NONE' , s:cTextDark   , 'NONE')
-call <SID>hi('phpStringSingle'   , 'NONE' , s:lightGreen  , 'NONE')
-call <SID>hi('phpSuperglobals'   , 'NONE' , s:lightRed    , 'bold')
-call <SID>hi('phpType'           , 'NONE' , s:lightBlue   , 'NONE')
-call <SID>hi('phpVarSelector'    , 'NONE' , s:lightRed    , 'NONE')
+" PHP {{{1
+call s:Hi('phpIdentifier'     , 'NONE' , s:color.lightRed    , 'NONE')
+call s:Hi('phpInclude'        , 'NONE' , s:color.lightYellow , 'bold')
+call s:Hi('phpKeyword'        , 'NONE' , s:color.lightViolet , 'NONE')
+call s:Hi('phpMemberSelector' , 'NONE' , s:color.lightYellow , 'NONE')
+call s:Hi('phpParent'         , 'NONE' , s:color.TextDark    , 'NONE')
+call s:Hi('phpRegion'         , 'NONE' , s:color.Text        , 'NONE')
+call s:Hi('phpStringDouble'   , 'NONE' , s:color.TextDark    , 'NONE')
+call s:Hi('phpStringSingle'   , 'NONE' , s:color.lightGreen  , 'NONE')
+call s:Hi('phpSuperglobals'   , 'NONE' , s:color.lightRed    , 'bold')
+call s:Hi('phpType'           , 'NONE' , s:color.lightBlue   , 'NONE')
+call s:Hi('phpVarSelector'    , 'NONE' , s:color.lightRed    , 'NONE')
 hi! link phpFunctions phpRegion
 hi! link phpOperator Delimiter
 hi! link phpStaticClasses phpSuperglobals
 hi! link phpStrEsc phpMemberSelector
 hi! link phpStringDelimiter phpStringSingle
-" }
-
-" Markdown {
-call <SID>hi('markdownCodeBlock'   , 'NONE' , s:cTextExtraDark , 'NONE')
-call <SID>hi('markdownCode'        , 'NONE' , s:lightBlue      , 'NONE')
-call <SID>hi('markdownH1'          , 'NONE' , s:cTextLight     , 'bold')
-call <SID>hi('markdownHeadingRule' , 'NONE' , s:lightViolet    , 'bold')
-call <SID>hi('markdownLinkText'    , 'NONE' , s:lightBlue      , 'underline')
-call <SID>hi('markdownListMarker'  , 'NONE' , s:lightRed       , 'NONE')
-call <SID>hi('markdownURL'         , 'NONE' , s:lightYellow    , 'NONE')
-call <SID>hi('markdownURLTitle'    , 'NONE' , s:lightGreen     , 'NONE')
+" Markdown {{{1
+call s:Hi('markdownCodeBlock'   , 'NONE' , s:color.TextExtraDark , 'NONE')
+call s:Hi('markdownCode'        , 'NONE' , s:color.lightBlue     , 'NONE')
+call s:Hi('markdownH1'          , 'NONE' , s:color.TextLight     , 'bold')
+call s:Hi('markdownHeadingRule' , 'NONE' , s:color.lightViolet   , 'bold')
+call s:Hi('markdownLinkText'    , 'NONE' , s:color.lightBlue     , 'underline')
+call s:Hi('markdownListMarker'  , 'NONE' , s:color.lightRed      , 'NONE')
+call s:Hi('markdownURL'         , 'NONE' , s:color.lightYellow   , 'NONE')
+call s:Hi('markdownURLTitle'    , 'NONE' , s:color.lightGreen    , 'NONE')
 hi! link markdownBlockquote markdownCode
 hi! link markdownBold HtmlBold
 hi! link markdownCodeDelimiter markdownCode
@@ -273,17 +254,15 @@ hi! link markdownItalic HtmlItalic
 hi! link markdownOrderedListMarker markdownListMarker
 hi! link markdownRule markdownCodeBlock
 hi! link markdownURLTitleDelimiter markdownURLTitle
-" }
-
-" For NERDtree plugin {
-call <SID>hi('NERDtreeBookmark'  , 'NONE'            , s:lightBlue      , 'NONE')
-call <SID>hi('NERDtreeCWD'       , 'NONE'            , s:lightYellow    , 'NONE')
-call <SID>hi('NERDtreeDir'       , 'NONE'            , s:cTextLight     , 'bold')
-call <SID>hi('NERDtreeFile'      , 'NONE'            , s:cText          , 'NONE')
-call <SID>hi('NERDtreeHelp'      , 'NONE'            , s:lightRed       , 'NONE')
-call <SID>hi('NERDtreeToggleOff' , s:cBackgroundDark , s:red            , 'bold')
-call <SID>hi('NERDtreeToggleOn'  , s:cBackgroundDark , s:green          , 'bold')
-call <SID>hi('NERDtreeUp'        , 'NONE'            , s:cTextExtraDark , 'NONE')
+" NERDtree plugin {{{1
+call s:Hi('NERDtreeBookmark'  , 'NONE'                 , s:color.lightBlue     , 'NONE')
+call s:Hi('NERDtreeCWD'       , 'NONE'                 , s:color.lightYellow   , 'NONE')
+call s:Hi('NERDtreeDir'       , 'NONE'                 , s:color.TextLight     , 'bold')
+call s:Hi('NERDtreeFile'      , 'NONE'                 , s:color.Text          , 'NONE')
+call s:Hi('NERDtreeHelp'      , 'NONE'                 , s:color.lightRed      , 'NONE')
+call s:Hi('NERDtreeToggleOff' , s:color.BackgroundDark , s:color.red           , 'bold')
+call s:Hi('NERDtreeToggleOn'  , s:color.BackgroundDark , s:color.green         , 'bold')
+call s:Hi('NERDtreeUp'        , 'NONE'                 , s:color.TextExtraDark , 'NONE')
 hi! link NERDtreeBookmarkName NERDtreeFile
 hi! link NERDtreeBookmarksHeader NERDtreeCWD
 hi! link NERDtreeClosable NERDtreeDirSlash
@@ -292,13 +271,18 @@ hi! link NERDtreeHelpCommand NERDtreeFile
 hi! link NERDtreeHelpKey NERDtreeFile
 hi! link NERDtreeHelpTitle NERDtreeHelp
 hi! link NERDtreeOpenable NERDtreeDirSlash
-" }
-
-" For CtrlP plugin {
-call <SID>hi('CtrlPLinePre'   , 'NONE' , s:cText       , 'NONE')
-call <SID>hi('CtrlPMatch'     , 'NONE' , s:lightYellow , 'bold')
-call <SID>hi('CtrlPMode1'     , 'NONE' , s:cTextDark   , 'NONE')
-call <SID>hi('CtrlPNoEntries' , 'NONE' , s:red         , 'bold')
-call <SID>hi('CtrlPPrtCursor' , 'NONE' , s:lightYellow , 'underline')
+" CtrlP plugin {{{1
+call s:Hi('CtrlPLinePre'   , 'NONE' , s:color.Text        , 'NONE')
+call s:Hi('CtrlPMatch'     , 'NONE' , s:color.lightYellow , 'bold')
+call s:Hi('CtrlPMode1'     , 'NONE' , s:color.TextDark    , 'NONE')
+call s:Hi('CtrlPNoEntries' , 'NONE' , s:color.red         , 'bold')
+call s:Hi('CtrlPPrtCursor' , 'NONE' , s:color.lightYellow , 'underline')
 hi! link CtrlPPrtBase CtrlPMatch
-" }
+" 1}}}
+
+" Cleaning {{{1
+unlet s:color
+delfunction s:Hi
+" 1}}}
+
+" vim:ft=vim:fdm=marker:fmr={{{,}}}:
