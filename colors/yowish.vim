@@ -19,77 +19,90 @@ let g:colors_name = "yowish"
 " *********************
 
 " Colors[hex, term256] {
-let s:cBackground       = yowish#colors#cBackground
-let s:cBackgroundDark   = yowish#colors#cBackgroundDark
-let s:cBackgroundLight  = yowish#colors#cBackgroundLight
-let s:cText             = yowish#colors#cText
-let s:cTextDark         = yowish#colors#cTextDark
-let s:cTextExtraDark    = yowish#colors#cTextExtraDark
-let s:cTextLight        = yowish#colors#cTextLight
-let s:cSelected         = yowish#colors#cSelected
+let s:cBackground       = ['#222222', '235']
+let s:cBackgroundDark   = ['#0e0e0e', '232']
+let s:cBackgroundLight  = ['#393939', '236']
+let s:cText             = ['#cbcbcb', '251']
+let s:cTextDark         = ['#bebebe', '249']
+let s:cTextExtraDark    = ['#8c8c8c', '244']
+let s:cTextLight        = ['#ebebeb', '255']
+let s:cSelected         = ['#373B41', '234']
 let s:cColumnBackground = s:cBackground
-let s:cColumnElements   = yowish#colors#cColumnElements
+let s:cColumnElements   = ['#6e6e6e', '242']
 
-let s:cComment          = yowish#colors#cComment
+let s:cComment          = ['#6e6e6e', '242']
 
-let s:red               = yowish#colors#red
-let s:green             = yowish#colors#green
-let s:yellow            = yowish#colors#yellow
+let s:red               = ['#f01d22', '160']
+let s:green             = ['#2acf2a', '40']
+let s:yellow            = ['#ffbe3c', '215']
 
-let s:lightRed          = yowish#colors#lightRed
-let s:lightGreen        = yowish#colors#lightGreen
-let s:lightYellow       = yowish#colors#lightYellow
-let s:lightBlue         = yowish#colors#lightBlue
-let s:lightViolet       = yowish#colors#lightViolet
+let s:lightRed          = ['#f2777a', '203']
+let s:lightGreen        = ['#99cc99', '108']
+let s:lightYellow       = ['#ffcc66', '222']
+let s:lightBlue         = ['#6699cc', '67']
+let s:lightViolet       = ['#d09cea', '171']
 " }
+
+fun! <SID>hi(groupName, bgColor, fgColor, option)
+	" Set higlighting colors of specified group name
+	let l:bgColor = type(a:bgColor) == type('NONE') ? ['NONE', 'NONE'] : a:bgColor
+	let l:fgColor = type(a:fgColor) == type('NONE') ? ['NONE', 'NONE'] : a:fgColor
+	let l:command = 'hi ' . a:groupName
+	let l:params = ['gui', 'cterm']
+	for i in (range(0, len(l:params)-1))
+		let l:command .= ' ' . l:params[i] . 'bg=' . l:bgColor[i] . ' ' . l:params[i] . 'fg=' . l:fgColor[i]
+		let l:command .= ' ' . l:params[i] . '=' . a:option
+	endfor
+	exe l:command
+endfun
 
 " *********************
 " Highlighting
 " *********************
 
 " Default {
-call yowish#lib#hi('Comment'      , 'NONE'              , s:cComment         , 'NONE')
-call yowish#lib#hi('Conceal'      , 'NONE'              , s:cBackgroundLight , 'NONE')
-call yowish#lib#hi('Constant'     , 'NONE'              , s:lightRed         , 'NONE')
-call yowish#lib#hi('CursorLineNr' , 'NONE'              , s:lightYellow      , 'NONE')
-call yowish#lib#hi('CursorLine'   , s:cBackgroundLight  , 'NONE'             , 'NONE')
-call yowish#lib#hi('Cursor'       , s:cText             , s:cBackgroundDark  , 'NONE')
-call yowish#lib#hi('DiffAdd'      , 'NONE'              , s:green            , 'NONE')
-call yowish#lib#hi('DiffChange'   , 'NONE'              , s:yellow           , 'NONE')
-call yowish#lib#hi('DiffDelete'   , 'NONE'              , s:red              , 'NONE')
-call yowish#lib#hi('DiffText'     , 'NONE'              , s:cTextDark        , 'NONE')
-call yowish#lib#hi('Directory'    , 'NONE'              , s:cTextDark        , 'NONE')
-call yowish#lib#hi('ErrorMsg'     , s:red               , s:cText            , 'bold')
-call yowish#lib#hi('Error'        , 'NONE'              , s:red              , 'bold')
-call yowish#lib#hi('FoldColumn'   , s:cColumnBackground , s:cColumnElements  , 'NONE')
-call yowish#lib#hi('Identifier'   , 'NONE'              , s:lightBlue        , 'NONE')
-call yowish#lib#hi('IncSearch'    , s:lightYellow       , s:cBackground      , 'NONE')
-call yowish#lib#hi('LineNr'       , 'NONE'              , s:cBackgroundLight , 'NONE')
-call yowish#lib#hi('MatchParen'   , 'NONE'              , s:yellow           , 'bold')
-call yowish#lib#hi('ModeMsg'      , 'NONE'              , s:yellow           , 'bold')
-call yowish#lib#hi('Normal'       , s:cBackground       , s:cText            , 'NONE')
-call yowish#lib#hi('PmenuSbar'    , s:cSelected         , s:lightYellow      , 'NONE')
-call yowish#lib#hi('Pmenu'        , s:cBackgroundLight  , s:cTextDark        , 'NONE')
-call yowish#lib#hi('PmenuSel'     , s:cBackground       , s:cText            , 'NONE')
-call yowish#lib#hi('PreProc'      , 'NONE'              , s:lightViolet      , 'NONE')
-call yowish#lib#hi('Question'     , 'NONE'              , s:lightGreen       , 'bold')
-call yowish#lib#hi('Search'       , s:yellow            , s:cBackgroundDark  , 'bold')
-call yowish#lib#hi('SpecialKey'   , 'NONE'              , s:cBackgroundLight , 'NONE')
-call yowish#lib#hi('Special'      , 'NONE'              , s:cTextLight       , 'NONE')
-call yowish#lib#hi('SpellBad'     , 'NONE'              , 'NONE'             , 'undercurl')
-call yowish#lib#hi('Statement'    , 'NONE'              , s:lightYellow      , 'NONE')
-call yowish#lib#hi('StatusLineNC' , s:cBackgroundLight  , s:cText            , 'NONE')
-call yowish#lib#hi('StatusLine'   , s:yellow            , s:cBackground      , 'NONE')
-call yowish#lib#hi('TabLineFill'  , 'NONE'              , s:cText            , 'NONE')
-call yowish#lib#hi('TabLine'      , s:cBackgroundLight  , s:cTextDark        , 'NONE')
-call yowish#lib#hi('TabLineSel'   , s:cBackground       , s:yellow           , 'bold')
-call yowish#lib#hi('Title'        , 'NONE'              , s:lightRed         , 'NONE')
-call yowish#lib#hi('Todo'         , 'NONE'              , s:yellow           , 'NONE')
-call yowish#lib#hi('Type'         , 'NONE'              , s:cTextDark        , 'NONE')
-call yowish#lib#hi('VertSplit'    , 'NONE'              , s:yellow           , 'NONE')
-call yowish#lib#hi('Visual'       , s:cSelected         , 'NONE'             , 'NONE')
-call yowish#lib#hi('WarningMsg'   , 'NONE'              , s:yellow           , 'bold')
-call yowish#lib#hi('WildMenu'     , s:cBackground       , s:yellow           , 'NONE')
+call <SID>hi('Comment'      , 'NONE'              , s:cComment         , 'NONE')
+call <SID>hi('Conceal'      , 'NONE'              , s:cBackgroundLight , 'NONE')
+call <SID>hi('Constant'     , 'NONE'              , s:lightRed         , 'NONE')
+call <SID>hi('CursorLineNr' , 'NONE'              , s:lightYellow      , 'NONE')
+call <SID>hi('CursorLine'   , s:cBackgroundLight  , 'NONE'             , 'NONE')
+call <SID>hi('Cursor'       , s:cText             , s:cBackgroundDark  , 'NONE')
+call <SID>hi('DiffAdd'      , 'NONE'              , s:green            , 'NONE')
+call <SID>hi('DiffChange'   , 'NONE'              , s:yellow           , 'NONE')
+call <SID>hi('DiffDelete'   , 'NONE'              , s:red              , 'NONE')
+call <SID>hi('DiffText'     , 'NONE'              , s:cTextDark        , 'NONE')
+call <SID>hi('Directory'    , 'NONE'              , s:cTextDark        , 'NONE')
+call <SID>hi('ErrorMsg'     , s:red               , s:cText            , 'bold')
+call <SID>hi('Error'        , 'NONE'              , s:red              , 'bold')
+call <SID>hi('FoldColumn'   , s:cColumnBackground , s:cColumnElements  , 'NONE')
+call <SID>hi('Identifier'   , 'NONE'              , s:lightBlue        , 'NONE')
+call <SID>hi('IncSearch'    , s:lightYellow       , s:cBackground      , 'NONE')
+call <SID>hi('LineNr'       , 'NONE'              , s:cBackgroundLight , 'NONE')
+call <SID>hi('MatchParen'   , 'NONE'              , s:yellow           , 'bold')
+call <SID>hi('ModeMsg'      , 'NONE'              , s:yellow           , 'bold')
+call <SID>hi('Normal'       , s:cBackground       , s:cText            , 'NONE')
+call <SID>hi('PmenuSbar'    , s:cSelected         , s:lightYellow      , 'NONE')
+call <SID>hi('Pmenu'        , s:cBackgroundLight  , s:cTextDark        , 'NONE')
+call <SID>hi('PmenuSel'     , s:cBackground       , s:cText            , 'NONE')
+call <SID>hi('PreProc'      , 'NONE'              , s:lightViolet      , 'NONE')
+call <SID>hi('Question'     , 'NONE'              , s:lightGreen       , 'bold')
+call <SID>hi('Search'       , s:yellow            , s:cBackgroundDark  , 'bold')
+call <SID>hi('SpecialKey'   , 'NONE'              , s:cBackgroundLight , 'NONE')
+call <SID>hi('Special'      , 'NONE'              , s:cTextLight       , 'NONE')
+call <SID>hi('SpellBad'     , 'NONE'              , 'NONE'             , 'undercurl')
+call <SID>hi('Statement'    , 'NONE'              , s:lightYellow      , 'NONE')
+call <SID>hi('StatusLineNC' , s:cBackgroundLight  , s:cText            , 'NONE')
+call <SID>hi('StatusLine'   , s:yellow            , s:cBackground      , 'NONE')
+call <SID>hi('TabLineFill'  , 'NONE'              , s:cText            , 'NONE')
+call <SID>hi('TabLine'      , s:cBackgroundLight  , s:cTextDark        , 'NONE')
+call <SID>hi('TabLineSel'   , s:cBackground       , s:yellow           , 'bold')
+call <SID>hi('Title'        , 'NONE'              , s:lightRed         , 'NONE')
+call <SID>hi('Todo'         , 'NONE'              , s:yellow           , 'NONE')
+call <SID>hi('Type'         , 'NONE'              , s:cTextDark        , 'NONE')
+call <SID>hi('VertSplit'    , 'NONE'              , s:yellow           , 'NONE')
+call <SID>hi('Visual'       , s:cSelected         , 'NONE'             , 'NONE')
+call <SID>hi('WarningMsg'   , 'NONE'              , s:yellow           , 'bold')
+call <SID>hi('WildMenu'     , s:cBackground       , s:yellow           , 'NONE')
 hi! link CursorColumn CursorLine
 hi! link Folded FoldColumn
 hi! link NonText Conceal
@@ -98,13 +111,13 @@ hi! link VisualNOS Visual
 " }
 
 " Vim {
-call yowish#lib#hi('vimAutoEvent' , 'NONE' , s:cTextExtraDark , 'NONE')
-call yowish#lib#hi('vimCommand'   , 'NONE' , s:lightRed       , 'NONE')
-call yowish#lib#hi('vimContinue'  , 'NONE' , s:cTextDark      , 'NONE')
-call yowish#lib#hi('vimFuncName'  , 'NONE' , s:lightYellow    , 'NONE')
-call yowish#lib#hi('vimOper'      , 'NONE' , s:cText          , 'NONE')
-call yowish#lib#hi('vimOption'    , 'NONE' , s:lightViolet    , 'NONE')
-call yowish#lib#hi('vimString'    , 'NONE' , s:lightGreen     , 'NONE')
+call <SID>hi('vimAutoEvent' , 'NONE' , s:cTextExtraDark , 'NONE')
+call <SID>hi('vimCommand'   , 'NONE' , s:lightRed       , 'NONE')
+call <SID>hi('vimContinue'  , 'NONE' , s:cTextDark      , 'NONE')
+call <SID>hi('vimFuncName'  , 'NONE' , s:lightYellow    , 'NONE')
+call <SID>hi('vimOper'      , 'NONE' , s:cText          , 'NONE')
+call <SID>hi('vimOption'    , 'NONE' , s:lightViolet    , 'NONE')
+call <SID>hi('vimString'    , 'NONE' , s:lightGreen     , 'NONE')
 hi! link vimComment Comment
 hi! link vimCommentString Comment
 hi! link vimCommentTitle Comment
@@ -130,9 +143,9 @@ hi! link vimVar Identifier
 " }
 "
 " Vimhelp {
-call yowish#lib#hi('helpExample'      , 'NONE' , s:cTextExtraDark , 'NONE')
-call yowish#lib#hi('helpOption'       , 'NONE' , s:cTextExtraDark , 'NONE')
-call yowish#lib#hi('helpSectionDelim' , 'NONE' , s:cTextExtraDark , 'NONE')
+call <SID>hi('helpExample'      , 'NONE' , s:cTextExtraDark , 'NONE')
+call <SID>hi('helpOption'       , 'NONE' , s:cTextExtraDark , 'NONE')
+call <SID>hi('helpSectionDelim' , 'NONE' , s:cTextExtraDark , 'NONE')
 hi! link helpComment Comment
 hi! link helpConstant Constant
 hi! link helpError Error
@@ -145,16 +158,16 @@ hi! link helpType Type
 " }
 
 " HTML {
-call yowish#lib#hi('HtmlArg'         , 'NONE' , s:lightYellow , 'NONE')
-call yowish#lib#hi('HtmlBold'        , 'NONE' , 'NONE'        , 'bold')
-call yowish#lib#hi('HtmlH1'          , 'NONE' , s:cText       , 'NONE')
-call yowish#lib#hi('HtmlItalic'      , 'NONE' , 'NONE'        , 'italic')
-call yowish#lib#hi('HtmlLink'        , 'NONE' , s:cText       , 'underline')
-call yowish#lib#hi('HtmlSpecialChar' , 'NONE' , s:cTextDark   , 'NONE')
-call yowish#lib#hi('HtmlString'      , 'NONE' , s:lightGreen  , 'NONE')
-call yowish#lib#hi('HtmlTagName'     , 'NONE' , s:lightRed    , 'NONE')
-call yowish#lib#hi('HtmlTitle'       , 'NONE' , s:cText       , 'bold')
-call yowish#lib#hi('HtmlUnderline'   , 'NONE' , 'NONE'        , 'underline')
+call <SID>hi('HtmlArg'         , 'NONE' , s:lightYellow , 'NONE')
+call <SID>hi('HtmlBold'        , 'NONE' , 'NONE'        , 'bold')
+call <SID>hi('HtmlH1'          , 'NONE' , s:cText       , 'NONE')
+call <SID>hi('HtmlItalic'      , 'NONE' , 'NONE'        , 'italic')
+call <SID>hi('HtmlLink'        , 'NONE' , s:cText       , 'underline')
+call <SID>hi('HtmlSpecialChar' , 'NONE' , s:cTextDark   , 'NONE')
+call <SID>hi('HtmlString'      , 'NONE' , s:lightGreen  , 'NONE')
+call <SID>hi('HtmlTagName'     , 'NONE' , s:lightRed    , 'NONE')
+call <SID>hi('HtmlTitle'       , 'NONE' , s:cText       , 'bold')
+call <SID>hi('HtmlUnderline'   , 'NONE' , 'NONE'        , 'underline')
 hi! link HtmlEndTag HtmlTag
 hi! link HtmlH2 HtmlH1
 hi! link HtmlH3 HtmlH2
@@ -166,20 +179,20 @@ hi! link HtmlSpecialTagName HtmlTagName
 " }
 
 " CSS {
-call yowish#lib#hi('cssAttrComma'    , 'NONE' , s:lightViolet , 'NONE')
-call yowish#lib#hi('cssAttr'         , 'NONE' , s:lightYellow , 'NONE')
-call yowish#lib#hi('cssClassName'    , 'NONE' , s:lightViolet , 'NONE')
-call yowish#lib#hi('cssDefinition'   , 'NONE' , s:lightBlue   , 'NONE')
-call yowish#lib#hi('cssFunction'     , 'NONE' , s:cText       , 'NONE')
-call yowish#lib#hi('cssIdentifier'   , 'NONE' , s:lightViolet , 'bold')
-call yowish#lib#hi('cssImportant'    , 'NONE' , s:lightBlue   , 'italic')
-call yowish#lib#hi('cssMediaKeyword' , 'NONE' , s:cTextLight  , 'bold')
-call yowish#lib#hi('cssMedia'        , 'NONE' , s:cTextLight  , 'NONE')
-call yowish#lib#hi('cssProp'         , 'NONE' , s:lightBlue   , 'NONE')
-call yowish#lib#hi('cssPseudoClass'  , 'NONE' , s:lightRed    , 'NONE')
-call yowish#lib#hi('cssStringQ'      , 'NONE' , s:lightGreen  , 'NONE')
-call yowish#lib#hi('cssTagName'      , 'NONE' , s:cText       , 'bold')
-call yowish#lib#hi('cssValueNumber'  , 'NONE' , s:lightYellow , 'NONE')
+call <SID>hi('cssAttrComma'    , 'NONE' , s:lightViolet , 'NONE')
+call <SID>hi('cssAttr'         , 'NONE' , s:lightYellow , 'NONE')
+call <SID>hi('cssClassName'    , 'NONE' , s:lightViolet , 'NONE')
+call <SID>hi('cssDefinition'   , 'NONE' , s:lightBlue   , 'NONE')
+call <SID>hi('cssFunction'     , 'NONE' , s:cText       , 'NONE')
+call <SID>hi('cssIdentifier'   , 'NONE' , s:lightViolet , 'bold')
+call <SID>hi('cssImportant'    , 'NONE' , s:lightBlue   , 'italic')
+call <SID>hi('cssMediaKeyword' , 'NONE' , s:cTextLight  , 'bold')
+call <SID>hi('cssMedia'        , 'NONE' , s:cTextLight  , 'NONE')
+call <SID>hi('cssProp'         , 'NONE' , s:lightBlue   , 'NONE')
+call <SID>hi('cssPseudoClass'  , 'NONE' , s:lightRed    , 'NONE')
+call <SID>hi('cssStringQ'      , 'NONE' , s:lightGreen  , 'NONE')
+call <SID>hi('cssTagName'      , 'NONE' , s:cText       , 'bold')
+call <SID>hi('cssValueNumber'  , 'NONE' , s:lightYellow , 'NONE')
 hi! link cssBraces cssTagName
 hi! link cssColor cssValueNumber
 hi! link cssCommonAttr cssValueNumber
@@ -201,11 +214,11 @@ hi! link cssValueTime cssValueNumber
 " }
 
 " SCSS {
-call yowish#lib#hi('sassCssAttribute'           , 'NONE' , s:cTextDark  , 'NONE')
-call yowish#lib#hi('sassDefault'                , 'NONE' , s:lightBlue  , 'italic')
-call yowish#lib#hi('sassInclude'                , 'NONE' , s:cTextLight , 'bold')
-call yowish#lib#hi('sassInterpolationDelimiter' , 'NONE' , s:cTextLight , 'NONE')
-call yowish#lib#hi('sassVariable'               , 'NONE' , s:lightRed   , 'NONE')
+call <SID>hi('sassCssAttribute'           , 'NONE' , s:cTextDark  , 'NONE')
+call <SID>hi('sassDefault'                , 'NONE' , s:lightBlue  , 'italic')
+call <SID>hi('sassInclude'                , 'NONE' , s:cTextLight , 'bold')
+call <SID>hi('sassInterpolationDelimiter' , 'NONE' , s:cTextLight , 'NONE')
+call <SID>hi('sassVariable'               , 'NONE' , s:lightRed   , 'NONE')
 hi! link sassClassChar sassClass
 hi! link sassClass cssClassName
 hi! link sassControl sassInclude
@@ -219,17 +232,17 @@ hi! link sassProp cssProp
 " }
 
 " PHP {
-call yowish#lib#hi('phpIdentifier'     , 'NONE' , s:lightRed  , 'NONE')
-call yowish#lib#hi('phpInclude'        , 'NONE' , s:lightYellow , 'bold')
-call yowish#lib#hi('phpKeyword'        , 'NONE' , s:lightViolet , 'NONE')
-call yowish#lib#hi('phpMemberSelector' , 'NONE' , s:lightYellow , 'NONE')
-call yowish#lib#hi('phpParent'         , 'NONE' , s:cTextDark   , 'NONE')
-call yowish#lib#hi('phpRegion'         , 'NONE' , s:cText       , 'NONE')
-call yowish#lib#hi('phpStringDouble'   , 'NONE' , s:cTextDark   , 'NONE')
-call yowish#lib#hi('phpStringSingle'   , 'NONE' , s:lightGreen  , 'NONE')
-call yowish#lib#hi('phpSuperglobals'   , 'NONE' , s:lightRed    , 'bold')
-call yowish#lib#hi('phpType'           , 'NONE' , s:lightBlue   , 'NONE')
-call yowish#lib#hi('phpVarSelector'    , 'NONE' , s:lightRed    , 'NONE')
+call <SID>hi('phpIdentifier'     , 'NONE' , s:lightRed  , 'NONE')
+call <SID>hi('phpInclude'        , 'NONE' , s:lightYellow , 'bold')
+call <SID>hi('phpKeyword'        , 'NONE' , s:lightViolet , 'NONE')
+call <SID>hi('phpMemberSelector' , 'NONE' , s:lightYellow , 'NONE')
+call <SID>hi('phpParent'         , 'NONE' , s:cTextDark   , 'NONE')
+call <SID>hi('phpRegion'         , 'NONE' , s:cText       , 'NONE')
+call <SID>hi('phpStringDouble'   , 'NONE' , s:cTextDark   , 'NONE')
+call <SID>hi('phpStringSingle'   , 'NONE' , s:lightGreen  , 'NONE')
+call <SID>hi('phpSuperglobals'   , 'NONE' , s:lightRed    , 'bold')
+call <SID>hi('phpType'           , 'NONE' , s:lightBlue   , 'NONE')
+call <SID>hi('phpVarSelector'    , 'NONE' , s:lightRed    , 'NONE')
 hi! link phpFunctions phpRegion
 hi! link phpOperator Delimiter
 hi! link phpStaticClasses phpSuperglobals
@@ -238,14 +251,14 @@ hi! link phpStringDelimiter phpStringSingle
 " }
 
 " Markdown {
-call yowish#lib#hi('markdownCodeBlock'   , 'NONE' , s:cTextExtraDark , 'NONE')
-call yowish#lib#hi('markdownCode'        , 'NONE' , s:lightBlue      , 'NONE')
-call yowish#lib#hi('markdownH1'          , 'NONE' , s:cTextLight     , 'bold')
-call yowish#lib#hi('markdownHeadingRule' , 'NONE' , s:lightViolet    , 'bold')
-call yowish#lib#hi('markdownLinkText'    , 'NONE' , s:lightBlue      , 'underline')
-call yowish#lib#hi('markdownListMarker'  , 'NONE' , s:lightRed       , 'NONE')
-call yowish#lib#hi('markdownURL'         , 'NONE' , s:lightYellow    , 'NONE')
-call yowish#lib#hi('markdownURLTitle'    , 'NONE' , s:lightGreen     , 'NONE')
+call <SID>hi('markdownCodeBlock'   , 'NONE' , s:cTextExtraDark , 'NONE')
+call <SID>hi('markdownCode'        , 'NONE' , s:lightBlue      , 'NONE')
+call <SID>hi('markdownH1'          , 'NONE' , s:cTextLight     , 'bold')
+call <SID>hi('markdownHeadingRule' , 'NONE' , s:lightViolet    , 'bold')
+call <SID>hi('markdownLinkText'    , 'NONE' , s:lightBlue      , 'underline')
+call <SID>hi('markdownListMarker'  , 'NONE' , s:lightRed       , 'NONE')
+call <SID>hi('markdownURL'         , 'NONE' , s:lightYellow    , 'NONE')
+call <SID>hi('markdownURLTitle'    , 'NONE' , s:lightGreen     , 'NONE')
 hi! link markdownBlockquote markdownCode
 hi! link markdownBold HtmlBold
 hi! link markdownCodeDelimiter markdownCode
@@ -263,14 +276,14 @@ hi! link markdownURLTitleDelimiter markdownURLTitle
 " }
 
 " For NERDtree plugin {
-call yowish#lib#hi('NERDtreeBookmark'  , 'NONE'            , s:lightBlue      , 'NONE')
-call yowish#lib#hi('NERDtreeCWD'       , 'NONE'            , s:lightYellow    , 'NONE')
-call yowish#lib#hi('NERDtreeDir'       , 'NONE'            , s:cTextLight     , 'bold')
-call yowish#lib#hi('NERDtreeFile'      , 'NONE'            , s:cText          , 'NONE')
-call yowish#lib#hi('NERDtreeHelp'      , 'NONE'            , s:lightRed       , 'NONE')
-call yowish#lib#hi('NERDtreeToggleOff' , s:cBackgroundDark , s:red            , 'bold')
-call yowish#lib#hi('NERDtreeToggleOn'  , s:cBackgroundDark , s:green          , 'bold')
-call yowish#lib#hi('NERDtreeUp'        , 'NONE'            , s:cTextExtraDark , 'NONE')
+call <SID>hi('NERDtreeBookmark'  , 'NONE'            , s:lightBlue      , 'NONE')
+call <SID>hi('NERDtreeCWD'       , 'NONE'            , s:lightYellow    , 'NONE')
+call <SID>hi('NERDtreeDir'       , 'NONE'            , s:cTextLight     , 'bold')
+call <SID>hi('NERDtreeFile'      , 'NONE'            , s:cText          , 'NONE')
+call <SID>hi('NERDtreeHelp'      , 'NONE'            , s:lightRed       , 'NONE')
+call <SID>hi('NERDtreeToggleOff' , s:cBackgroundDark , s:red            , 'bold')
+call <SID>hi('NERDtreeToggleOn'  , s:cBackgroundDark , s:green          , 'bold')
+call <SID>hi('NERDtreeUp'        , 'NONE'            , s:cTextExtraDark , 'NONE')
 hi! link NERDtreeBookmarkName NERDtreeFile
 hi! link NERDtreeBookmarksHeader NERDtreeCWD
 hi! link NERDtreeClosable NERDtreeDirSlash
@@ -282,10 +295,10 @@ hi! link NERDtreeOpenable NERDtreeDirSlash
 " }
 
 " For CtrlP plugin {
-call yowish#lib#hi('CtrlPLinePre'   , 'NONE' , s:cText       , 'NONE')
-call yowish#lib#hi('CtrlPMatch'     , 'NONE' , s:lightYellow , 'bold')
-call yowish#lib#hi('CtrlPMode1'     , 'NONE' , s:cTextDark   , 'NONE')
-call yowish#lib#hi('CtrlPNoEntries' , 'NONE' , s:red         , 'bold')
-call yowish#lib#hi('CtrlPPrtCursor' , 'NONE' , s:lightYellow , 'underline')
+call <SID>hi('CtrlPLinePre'   , 'NONE' , s:cText       , 'NONE')
+call <SID>hi('CtrlPMatch'     , 'NONE' , s:lightYellow , 'bold')
+call <SID>hi('CtrlPMode1'     , 'NONE' , s:cTextDark   , 'NONE')
+call <SID>hi('CtrlPNoEntries' , 'NONE' , s:red         , 'bold')
+call <SID>hi('CtrlPPrtCursor' , 'NONE' , s:lightYellow , 'underline')
 hi! link CtrlPPrtBase CtrlPMatch
 " }
