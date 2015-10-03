@@ -1,7 +1,7 @@
 " Yowish airline theme.
 
 " Creation     : 2015-01-12
-" Modification : 2015-01-24
+" Modification : 2015-10-03
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -41,7 +41,7 @@ let s:lightViolet       = yowish#colors#lightViolet
 let g:airline#themes#yowish#palette = {}
 
 " NORMAL mode.
-let s:N1   = [ s:yellow[0]         , 'NONE' , s:yellow[1]         , 'NONE']
+let s:N1   = [ s:yellow[0]         , s:cBackgroundLight[0] , s:yellow[1]         , 'NONE']
 let s:N2   = [ s:cTextExtraDark[0] , 'NONE' , s:cTextExtraDark[1] , 'NONE']
 let s:N3   = [ s:cTextDark[0]      , 'NONE' , s:cTextDark[1]      , 'NONE'  , 'bold']
 let g:airline#themes#yowish#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
