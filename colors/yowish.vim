@@ -2,7 +2,7 @@
 
 " Version      : 0.5
 " Creation     : 2015-01-09
-" Modification : 2015-03-15
+" Modification : 2015-10-05
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -44,9 +44,9 @@ fun! s:Hi(groupName, bgColor, fgColor, option)
 	let l:fgColor = type(a:fgColor) ==# type('') ? ['NONE', 'NONE'] : a:fgColor
 	let l:command = 'hi ' . a:groupName
 	let l:params = ['gui', 'cterm']
-	for i in (range(0, len(l:params)-1))
-		let l:command .= ' ' . l:params[i] . 'bg=' . l:bgColor[i] . ' ' . l:params[i] . 'fg=' . l:fgColor[i]
-		let l:command .= ' ' . l:params[i] . '=' . a:option
+	for l:i in (range(0, len(l:params)-1))
+		let l:command .= ' ' . l:params[l:i] . 'bg=' . l:bgColor[l:i] . ' ' . l:params[l:i] . 'fg=' . l:fgColor[l:i]
+		let l:command .= ' ' . l:params[l:i] . '=' . a:option
 	endfor
 	exe l:command
 endfun
