@@ -234,8 +234,6 @@ hi! link phpStrEsc phpMemberSelector
 hi! link phpStringDelimiter phpStringSingle
 " JavaScript {{{1
 call s:Hi('jsFunctionKey'     , 'NONE' , s:color.lightYellow , 'NONE')
-call s:Hi('jsStringS'         , 'NONE' , s:color.lightGreen  , 'NONE')
-call s:Hi('jsStringD'         , 'NONE' , s:color.lightGreen  , 'NONE')
 call s:Hi('jsGlobalObjects'   , 'NONE' , s:color.lightBlue   , 'NONE')
 call s:Hi('jsFuncName'   , 'NONE' , s:color.lightRed   , 'NONE')
 call s:Hi('jsFunction'   , 'NONE' , s:color.lightViolet   , 'NONE')
