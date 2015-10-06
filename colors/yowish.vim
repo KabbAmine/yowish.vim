@@ -232,6 +232,14 @@ hi! link phpOperator Delimiter
 hi! link phpStaticClasses phpSuperglobals
 hi! link phpStrEsc phpMemberSelector
 hi! link phpStringDelimiter phpStringSingle
+" JavaScript {{{1
+call s:Hi('jsFunctionKey'     , 'NONE' , s:color.lightYellow , 'NONE')
+call s:Hi('jsGlobalObjects'   , 'NONE' , s:color.lightBlue   , 'NONE')
+call s:Hi('jsFuncName'   , 'NONE' , s:color.lightRed   , 'NONE')
+call s:Hi('jsFunction'   , 'NONE' , s:color.lightViolet   , 'NONE')
+call s:Hi('jsFuncCall'   , 'NONE' , s:color.lightYellow   , 'NONE')
+call s:Hi('jsExceptions'   , 'NONE' , s:color.lightRed   , 'italic')
+call s:Hi('jsStorageClass'   , 'NONE' , s:color.lightYellow   , 'NONE')
 " Markdown {{{1
 call s:Hi('markdownCodeBlock'   , 'NONE' , s:color.TextExtraDark , 'NONE')
 call s:Hi('markdownCode'        , 'NONE' , s:color.lightBlue     , 'NONE')
