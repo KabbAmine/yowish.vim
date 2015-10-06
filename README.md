@@ -2,34 +2,38 @@
 
 ## Description
 
-Yowish is a vim dark theme similar to [outlander](https://atom.io/themes/outlander-syntax), with some yellow in it :smiley: (Works well on both GUI & 256-colors terminal)
-
-It looks good on most file types, but shows his true colors in the following ones:
-
-- `HTML` & `CSS`
-- `SASS` & `SCSS`
-
-  ![HTML, CSS & SCSS](.img/html-css-scss.jpg "HTML, css and scss files")
-
-- `Vim` & `vimhelp`
-- `Markdown`
-
-  ![Vim, vimhelp & markdown](.img/vim-vimhelp-markdown.jpg "Vim, vimhelp and markdown files")
-
-- `PHP`
-
-  ![Php, NERDtree & Undotree plugins](.img/php-nerdtree-undotree.jpg "Php file with NERDtree and Undotree")
+Yowish is a vim dark theme similar to [outlander](https://atom.io/themes/outlander-syntax), with some yellow in it :smiley: (Works well on both GUI & 256-colors terminal).
 
 ## GUI vs terminal
 
 The colors in 256-color terminals are quite similar to the ones in the GUI version.
 
 Here is a comparison between GVim and xfce-terminal with a standard color palette:
-![GUI vs Terminal](.img/term-vs-gui.png "GVim vs xfce-terminal screenshot")
+![GUI vs Terminal](.img/term-vs-gui.png "GVim vs xfce-terminal screenshots")
 
-## Plugins
+## Supported file types
 
-The theme provides custom colors for the following plugins:
+Logically, any file type should be good looking, but the following ones are more customized than others:
+
+- `html`
+- `vim` & `vimhelp`
+- `css`
+- `sass` & `scss`
+- `php`
+- `markdown`
+
+## Syntax plugins
+
+The theme uses some elements from the following syntax plugins:
+
+* `html`: [othree/html5.vim](https://github.com/othree/html5.vim)
+* `php`: [StanAngeloff/php.vim](https://github.com/StanAngeloff/php.vim)
+* `markdown`: [gabrielelana/vim-markdown](https://github.com/gabrielelana/vim-markdown)
+
+## Other plugins
+
+The theme provides custom colors for:
+
 * [CtrlP](https://github.com/ctrlpvim/ctrlp.vim)
 
   ![CtrlP](.img/ctrlp.jpg "CtrlP")
@@ -38,7 +42,7 @@ The theme provides custom colors for the following plugins:
 
   ![NERDTree](.img/nerdtree.jpg "NERDTree")
 
-* An [airline](https://github.com/bling/vim-airline) theme
+* And an [airline](https://github.com/bling/vim-airline) theme
 
   ![Yowish theme for Airline](.img/airline.jpg "Different vim modes in airline with yowish")
 
@@ -56,16 +60,25 @@ Or in a better way, use a vim plugin manager:
 
 ## Notes
 
-Being the 1st vim colorscheme that I'm developing, feel free to report issues and PR.
+Being the 1st vim colorscheme that I'm developing, feel free to report issues.
+Pull requests are welcome, but please provide a before/after screenshot.
 
 And if you're asking yourself, yeah I like yellow color :smile:
 
 ## Todo
 
-- Better support for `python`, `c` and `java`...
+- Support more plugins
+- Better support for:
+  - [ ] [`javascript`](https://github.com/KabbAmine/yowish.vim/issues/3)
+  - [ ] [`ruby`](https://github.com/KabbAmine/yowish.vim/issues/1)
+  - [ ] `python`
+  - [ ] `c`
+  - [ ] `java`
+- Add screens more up-to-date
+- A light theme?
 
 ## Thanks
 
-Thank to Bram Moolenaar for creating the best piece of software in the world :heart:
+Thanks to Bram Moolenaar for creating the best piece of software in the world :heart:
 
-Thank to you if you're using yowish.
+Thanks to you if you're using yowish.
