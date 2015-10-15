@@ -2,7 +2,7 @@
 
 " Version      : 0.5
 " Creation     : 2015-01-09
-" Modification : 2015-10-10
+" Modification : 2015-10-15
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -229,6 +229,26 @@ hi! link markdownEmoticonKeyword markdownH1
 hi! link markdownInlineCode markdownCode
 hi! link markdownItemDelimiter markdownListMarker
 hi! link markdownLinkUrl markdownUrl
+" Javascript {{{1
+call s:Hi('javaScriptBraces'     , 'NONE' , s:color.textLight   , 'bold')
+call s:Hi('javaScriptIdentifier' , 'NONE' , s:color.lightYellow , 'NONE')
+call s:Hi('javaScriptNumber'     , 'NONE' , s:color.lightRed    , 'NONE')
+" For https://github.com/othree/yajs.vim
+call s:Hi('JavascriptBlock'    , 'NONE' , s:color.textDark    , 'NONE')
+call s:Hi('JavascriptExport'   , 'NONE' , 'NONE'              , 'bold')
+call s:Hi('JavascriptOpSymbol' , 'NONE' , s:color.lightViolet , 'NONE')
+hi! link JavascriptDotNotation javaScriptIdentifier
+hi! link JavascriptLogicSymbol JavascriptOpSymbol
+hi! link JavascriptOpSymbols JavascriptOpSymbol
+hi! link javascriptVariable javaScriptIdentifier
+" For https://github.com/pangloss/vim-javascript
+call s:Hi('JsFuncBlock'     , 'NONE' , s:color.textDark    , 'NONE')
+call s:Hi('jsFuncCall'      , 'NONE' , s:color.lightBlue   , 'NONE')
+call s:Hi('jsGlobalObjects' , 'NONE' , 'NONE'              , 'bold')
+call s:Hi('jsOperator'      , 'NONE' , s:color.lightViolet , 'NONE')
+hi! link jsFunction javaScriptIdentifier
+hi! link jsNoise javaScriptIdentifier
+hi! link jsStorageClass javaScriptIdentifier
 " NERDtree plugin {{{1
 call s:Hi('NERDtreeBookmark'  , 'NONE'                 , s:color.lightBlue     , 'NONE')
 call s:Hi('NERDtreeCWD'       , 'NONE'                 , s:color.lightYellow   , 'NONE')
