@@ -3,6 +3,15 @@ CHANGELOG
 
 ------------------------------
 
+v0.5.3 <small>(2015-10-16)</small>
+------------------------------
+
+* Better javascript support
+* Better ruby support
+* Update screens
+
+------------------------------
+
 v0.5.1 <small>(2015-10-05)</small>
 ------------------------------
 
