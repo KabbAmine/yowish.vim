@@ -249,6 +249,10 @@ call s:Hi('jsOperator'      , 'NONE' , s:color.lightViolet , 'NONE')
 hi! link jsFunction javaScriptIdentifier
 hi! link jsNoise javaScriptIdentifier
 hi! link jsStorageClass javaScriptIdentifier
+" Ruby {{{1
+call s:Hi('rubyBlock'    , 'NONE' , 'NONE'              , 'bold')
+call s:Hi('rubyConstant' , 'NONE' , s:color.lightYellow , 'NONE')
+call s:Hi('rubyFunction' , 'NONE' , s:color.lightYellow , 'NONE')
 " NERDtree plugin {{{1
 call s:Hi('NERDtreeBookmark'  , 'NONE'                 , s:color.lightBlue     , 'NONE')
 call s:Hi('NERDtreeCWD'       , 'NONE'                 , s:color.lightYellow   , 'NONE')
