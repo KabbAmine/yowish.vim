@@ -2,7 +2,7 @@
 
 " Version      : 0.5.3
 " Creation     : 2015-01-09
-" Modification : 2015-10-16
+" Modification : 2015-10-17
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -63,6 +63,7 @@ call s:Hi('Statement' , 'NONE' , s:color.lightYellow , 'NONE')
 call s:Hi('String'    , 'NONE' , s:color.lightGreen  , 'NONE')
 hi! link Character String
 " Default {{{1
+call s:Hi('ColorColumn'  , s:color.backgroundDark   , s:color.yellow          , 'bold')
 call s:Hi('Comment'      , 'NONE'                   , s:color.comment         , 'NONE')
 call s:Hi('Conceal'      , 'NONE'                   , s:color.backgroundLight , 'NONE')
 call s:Hi('CursorLineNr' , 'NONE'                   , s:color.lightYellow     , 'NONE')
