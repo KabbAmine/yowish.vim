@@ -2,7 +2,7 @@
 
 " Version      : 0.5.4
 " Creation     : 2015-01-09
-" Modification : 2015-10-17
+" Modification : 2015-11-03
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -254,6 +254,14 @@ hi! link jsStorageClass javaScriptIdentifier
 call s:Hi('rubyBlock'    , 'NONE' , 'NONE'              , 'bold')
 call s:Hi('rubyConstant' , 'NONE' , s:color.lightYellow , 'NONE')
 call s:Hi('rubyFunction' , 'NONE' , s:color.lightYellow , 'NONE')
+" Jade {{{1
+" For https://github.com/digitaltoad/vim-jade
+call s:Hi('jadeAttributes' , 'NONE' , s:color.text        , 'NONE')
+call s:Hi('jadeClass'      , 'NONE' , s:color.lightYellow , 'NONE')
+call s:Hi('jadeTag'        , 'NONE' , s:color.lightRed    , 'NONE')
+hi! link jadeClassChar jadeClass
+hi! link jadeDoctype comment
+hi! link jadeIdChar jadeId
 " NERDtree plugin {{{1
 call s:Hi('NERDtreeBookmark'  , 'NONE'                 , s:color.lightBlue     , 'NONE')
 call s:Hi('NERDtreeCWD'       , 'NONE'                 , s:color.lightYellow   , 'NONE')
