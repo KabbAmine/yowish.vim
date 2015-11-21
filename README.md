@@ -22,6 +22,7 @@ Logically, any file type should be good looking, but the following ones are more
 
 - `css`
 - `html`
+- `jade`
 - `javascript`
 - `markdown`
 - `php`
@@ -34,6 +35,7 @@ Logically, any file type should be good looking, but the following ones are more
 The theme uses some elements from the following syntax plugins:
 
 * `html`: [othree/html5.vim](https://github.com/othree/html5.vim)
+* `jade`: [vim-jade](https://github.com/digitaltoad/vim-jade)
 * `javascript`:
   - [othree/yajs.vim](https://github.com/othree/yajs.vim)
   - [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript)
