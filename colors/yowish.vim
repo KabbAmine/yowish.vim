@@ -1,8 +1,8 @@
 " Yowish colorscheme.
 
-" Version      : 0.5.4
+" Version      : 0.5.5
 " Creation     : 2015-01-09
-" Modification : 2015-11-03
+" Modification : 2015-11-21
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
