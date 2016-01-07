@@ -54,9 +54,13 @@ The theme provides custom colors for:
 
   ![NERDTree](.img/nerdtree.jpg "NERDTree")
 
-* And an [airline](https://github.com/bling/vim-airline) theme
+* And 2 [airline](https://github.com/bling/vim-airline) themes:
 
+  * yowish
   ![Yowish theme for Airline](.img/airline.jpg "Different vim modes in airline with yowish")
+
+  * yowishU (*U for Unity*)
+  ![YowishU theme for Airline](.img/airline-yowishU.jpg "Different vim modes in airline with yowishU")
 
 ## Installation
 
