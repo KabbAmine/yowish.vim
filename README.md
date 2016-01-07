@@ -1,6 +1,6 @@
-# Yowish, a yellowish dark vim colorscheme
+# Yowish<small>, a yellowish dark vim colorscheme</small> [![GitHub version](https://badge.fury.io/gh/KabbAmine%2Fyowish.vim.svg)](https://badge.fury.io/gh/KabbAmine%2Fyowish.vim)
 
-[![GitHub version](https://badge.fury.io/gh/KabbAmine%2Fyowish.vim.svg)](https://badge.fury.io/gh/KabbAmine%2Fyowish.vim)
+-------------------------
 
 ## Description
 
@@ -70,6 +70,29 @@ Or in a better way, use a vim plugin manager:
 | [Vundle](https://github.com/gmarik/Vundle.vim)         | `Plugin 'KabbAmine/yowish.vim'`    | `PluginInstall`        |
 | [NeoBundle](https://github.com/Shougo/neobundle.vim)   | `NeoBundle 'KabbAmine/yowish.vim'` | `NeoBundleInstall`     |
 
+## Configuration
+
+The user configuration is stocked in a global dictionary `g:yowish` where:
+
+| key                       | default value             | description                             |
+| ------------------------- | ------------------------- | --------------------------------        |
+| `term_italic`             | `0`                       | Enable(1)/Disable(0) italic in terminal |
+
+Currently, only one option is present, but this will change in the future.
+
+e.g
+
+```
+let g:yowish = {}
+let g:yowish.term_italic = 1
+
+" Or
+
+let g:yowish = {
+			\ 'term_italic': 1,
+			\ }
+```
+
 ## Notes
 
 Being the 1st vim colorscheme that I'm developing, feel free to report issues.
@@ -87,7 +110,6 @@ And if you're asking yourself, yeah I like yellow :smile:
   - [ ] `c`
   - [ ] `java`
 - A simple html page for screenshots
-- A light theme?
 
 ## Thanks
 
