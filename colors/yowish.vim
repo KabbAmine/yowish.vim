@@ -2,7 +2,7 @@
 
 " Version      : 0.5.5
 " Creation     : 2015-01-09
-" Modification : 2015-11-21
+" Modification : 2016-01-07
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -17,38 +17,49 @@ let g:colors_name = 'yowish'
 
 " Colors (.group[hex, term256]) {{{1
 let s:color = {
-			\ 'background'       : ['#222222', '235'],
-			\ 'backgroundDark'   : ['#0e0e0e', '232'],
-			\ 'backgroundLight'  : ['#393939', '236'],
-			\ 'text'             : ['#cbcbcb', '251'],
-			\ 'textDark'         : ['#bebebe', '249'],
-			\ 'textExtraDark'    : ['#8c8c8c', '244'],
-			\ 'textLight'        : ['#ebebeb', '255'],
-			\ 'selected'         : ['#373B41', '234'],
-			\ 'columnBackground' : ['#222222', '235'],
-			\ 'columnElements'   : ['#6e6e6e', '242'],
-			\ 'comment'          : ['#6e6e6e', '242'],
-			\ 'red'              : ['#f01d22', '160'],
-			\ 'green'            : ['#2acf2a', '40'],
-			\ 'yellow'           : ['#ffbe3c', '215'],
-			\ 'lightRed'         : ['#f2777a', '203'],
-			\ 'lightGreen'       : ['#99cc99', '108'],
-			\ 'lightYellow'      : ['#ffcc66', '222'],
-			\ 'lightBlue'        : ['#6699cc', '67'],
-			\ 'lightViolet'      : ['#d09cea', '171']
+			\ 'background'       : ['#222222','235'],
+			\ 'backgroundDark'   : ['#0e0e0e','232'],
+			\ 'backgroundLight'  : ['#393939','236'],
+			\ 'columnBackground' : ['#222222','235'],
+			\ 'columnElements'   : ['#6e6e6e','242'],
+			\ 'comment'          : ['#6e6e6e','242'],
+			\ 'green'            : ['#2acf2a','40'],
+			\ 'lightBlue'        : ['#6699cc','67'],
+			\ 'lightGreen'       : ['#99cc99','108'],
+			\ 'lightRed'         : ['#f2777a','203'],
+			\ 'lightViolet'      : ['#d09cea','171'],
+			\ 'lightYellow'      : ['#ffcc66','222'],
+			\ 'red'              : ['#f01d22','160'],
+			\ 'selected'         : ['#373B41','234'],
+			\ 'text'             : ['#cbcbcb','251'],
+			\ 'textDark'         : ['#bebebe','249'],
+			\ 'textExtraDark'    : ['#8c8c8c','244'],
+			\ 'textLight'        : ['#ebebeb','255'],
+			\ 'yellow'           : ['#ffbe3c','215'],
 			\ }
+" User config in a global dict {{{1
+if !exists('g:yowish')
+	let g:yowish = {}
+endif
+let g:yowish = {
+			\ 'term_italic' : !has_key(g:yowish, 'term_italic') ? 0 : g:yowish.term_italic,
+		\ }
 " Highlighting function {{{1
-fun! s:Hi(groupName, bgColor, fgColor, option)
-	" Set higlighting colors of specified group name
-	let l:bgColor = type(a:bgColor) ==# type('') ? ['NONE', 'NONE'] : a:bgColor
-	let l:fgColor = type(a:fgColor) ==# type('') ? ['NONE', 'NONE'] : a:fgColor
-	let l:command = 'hi ' . a:groupName
-	let l:params = ['gui', 'cterm']
-	for l:i in (range(0, len(l:params)-1))
-		let l:command .= ' ' . l:params[l:i] . 'bg=' . l:bgColor[l:i] . ' ' . l:params[l:i] . 'fg=' . l:fgColor[l:i]
-		let l:command .= ' ' . l:params[l:i] . '=' . a:option
+fun! s:Hi(groupName, bgColor, fgColor, opt)
+	let l:bg = type(a:bgColor) ==# type('') ? ['NONE', 'NONE' ] : a:bgColor
+	let l:fg = type(a:fgColor) ==# type('') ? ['NONE', 'NONE'] : a:fgColor
+	let l:opt = !g:yowish.term_italic && a:opt ==# 'italic' ?
+				\ [a:opt, 'NONE'] : [a:opt, a:opt]
+	let l:mode = ['gui', 'cterm']
+	let l:cmd = 'hi ' . a:groupName
+	for l:i in (range(0, len(l:mode)-1))
+		let l:cmd .= printf(' %sbg=%s %sfg=%s %s=%s',
+					\ l:mode[l:i], l:bg[l:i],
+					\ l:mode[l:i], l:fg[l:i],
+					\ l:mode[l:i], l:opt[l:i]
+				\ )
 	endfor
-	exe l:command
+	execute l:cmd
 endfun
 " 1}}}
 
