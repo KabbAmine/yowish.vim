@@ -78,6 +78,12 @@ let g:airline#themes#yowish#palette.inactive = airline#themes#generate_color_map
 let g:airline#themes#yowish#palette.inactive_modified = {
 			\ 'airline_c': [s:color.textExtraDark[0], s:color.backgroundDark[0], s:color.textExtraDark[1], s:color.backgroundDark[1] , 'bold'],
 		\ }
+" Warningmsg {{{1
+" Same for all modes
+for s:m in ['normal', 'insert', 'visual', 'replace', 'normal_modified', 'insert_modified', 'insert_paste', 'visual_modified', 'replace_modified']
+	let g:airline#themes#yowishU#palette[s:m]['airline_warning'] =
+				\ [s:color.backgroundDark[0], s:color.yellow[0], s:color.backgroundDark[1], s:color.yellow[1], 'bold']
+endfor
 " Accents {{{1
 "	  Accents are used to give parts within a section a slightly different look or
 "	  color. Here we are defining a "red" accent, which is used by the 'readonly'
@@ -101,7 +107,7 @@ let g:airline#themes#yowish#palette.ctrlp = airline#extensions#ctrlp#generate_co
 " 1}}}
 
 " Cleaning {{{1
-unlet s:color
+unlet s:color s:m
 " 1}}}
 
 " vim:ft=vim:fdm=marker:fmr={{{,}}}:
