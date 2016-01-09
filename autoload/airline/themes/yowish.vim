@@ -1,5 +1,5 @@
 " Creation     : 2015-01-12
-" Modification : 2016-01-08
+" Modification : 2016-01-09
 
 " Colors[hex, term256] {{{1
 let s:color = {
@@ -49,7 +49,7 @@ let g:airline#themes#yowish#palette.insert_modified = {
 			\ 'airline_c': [s:color.yellow[0], 'NONE', s:color.yellow[1], 'NONE', 'bold'],
 		\ }
 let g:airline#themes#yowish#palette.insert_paste = {
-			\ 'airline_a': [s:color.backgroundDark[0], s:color.yellow[0], s:color.backgroundDark[0], s:color.yellow[1], 'bold'],
+			\ 'airline_a': [s:color.backgroundDark[0], s:color.yellow[0], s:color.backgroundDark[1], s:color.yellow[1], 'bold'],
 		\ }
 " REPLACE mode {{{1
 let g:airline#themes#yowish#palette.replace = airline#themes#generate_color_map(
