@@ -8,6 +8,8 @@ Yowish is a vim dark theme similar to [outlander](https://atom.io/themes/outland
 
 ![Viml code](.img/viml.png "A vimscript sample")
 
+It's a theme, and a theme needs [screens](#screens).
+
 ## GUI vs terminal
 
 The colors in 256-color terminals are quite similar to the ones in the GUI version.
@@ -18,17 +20,7 @@ Here is a comparison between GVim and xfce-terminal with a standard color palett
 
 ## Supported file types
 
-Logically, any file type should be good looking, but the following ones are more customized than others:
-
-- `css`
-- `html`
-- `jade`
-- `javascript`
-- `markdown`
-- `php`
-- `ruby`
-- `sass` & `scss`
-- `vim` & `vimhelp`
+Normally, any file type should be good looking, but some are more customized than others, check the [screens](#screens).
 
 ## Syntax plugins
 
@@ -96,6 +88,42 @@ let g:yowish = {
 			\ 'term_italic': 1,
 			\ }
 ```
+
+## Screens <a id="screens"></a>
+
+Feel free to add screens for other file types.
+
+`css`
+
+![Css sample](.img/css.jpg)
+
+`html`
+
+![Html sample](.img/html.jpg)
+
+`jade`
+
+![Jade sample](.img/jade.jpg)
+
+`javascript`
+
+![Javascript sample](https://cloud.githubusercontent.com/assets/5658084/10515974/a5aafeac-735e-11e5-94e2-a7b82c5cbf10.png)
+
+`php`
+
+![Php sample](.img/php.jpg)
+
+`ruby`
+
+![Ruby sample thanks to @](https://cloud.githubusercontent.com/assets/5658084/10513493/a101f53a-7350-11e5-9abb-1e014a8c294f.png)
+
+`scss`
+
+![Scss sample](.img/scss.jpg)
+
+`sh`
+
+![Sh sample](.img/sh.jpg)
 
 ## Notes
 
