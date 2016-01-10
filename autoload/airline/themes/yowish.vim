@@ -1,5 +1,5 @@
 " Creation     : 2015-01-12
-" Modification : 2016-01-09
+" Modification : 2016-01-11
 
 " Colors[hex, term256] {{{1
 let s:color = {
@@ -81,7 +81,7 @@ let g:airline#themes#yowish#palette.inactive_modified = {
 " Warningmsg {{{1
 " Same for all modes
 for s:m in ['normal', 'insert', 'visual', 'replace', 'normal_modified', 'insert_modified', 'insert_paste', 'visual_modified', 'replace_modified']
-	let g:airline#themes#yowishU#palette[s:m]['airline_warning'] =
+	let g:airline#themes#yowish#palette[s:m]['airline_warning'] =
 				\ [s:color.backgroundDark[0], s:color.yellow[0], s:color.backgroundDark[1], s:color.yellow[1], 'bold']
 endfor
 " Accents {{{1
