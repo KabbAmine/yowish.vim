@@ -2,7 +2,7 @@
 
 " Version      : 0.6.2
 " Creation     : 2015-01-09
-" Modification : 2016-01-11
+" Modification : 2016-01-13
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -80,9 +80,9 @@ call s:Hi('Conceal'      , 'NONE'                   , s:color.backgroundLight , 
 call s:Hi('CursorLineNr' , 'NONE'                   , s:color.lightYellow     , 'NONE')
 call s:Hi('CursorLine'   , s:color.backgroundLight  , 'NONE'                  , 'NONE')
 call s:Hi('Cursor'       , s:color.text             , s:color.backgroundDark  , 'NONE')
-call s:Hi('DiffAdd'      , 'NONE'                   , s:color.green           , 'NONE')
-call s:Hi('DiffChange'   , 'NONE'                   , s:color.yellow          , 'NONE')
-call s:Hi('DiffDelete'   , 'NONE'                   , s:color.red             , 'NONE')
+call s:Hi('DiffAdd'      , s:color.lightGreen       , s:color.backgroundDark  , 'NONE')
+call s:Hi('DiffChange'   , s:color.backgroundLight  , s:color.lightYellow     , 'NONE')
+call s:Hi('DiffDelete'   , s:color.lightRed         , s:color.backgroundDark  , 'NONE')
 call s:Hi('DiffText'     , 'NONE'                   , s:color.textDark        , 'NONE')
 call s:Hi('Directory'    , 'NONE'                   , s:color.textDark        , 'NONE')
 call s:Hi('ErrorMsg'     , s:color.red              , s:color.text            , 'bold')
