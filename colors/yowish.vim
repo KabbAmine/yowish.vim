@@ -298,6 +298,15 @@ call s:Hi('CtrlPMode1'     , 'NONE' , s:color.textDark    , 'NONE')
 call s:Hi('CtrlPNoEntries' , 'NONE' , s:color.red         , 'bold')
 call s:Hi('CtrlPPrtCursor' , 'NONE' , s:color.lightYellow , 'underline')
 hi! link CtrlPPrtBase CtrlPMatch
+" Agit plugin {{{1
+call s:Hi('agitStatAdded'   , 'NONE' , s:color.green , 'NONE')
+call s:Hi('agitStatFile'    , 'NONE' , s:color.text  , 'bold')
+call s:Hi('agitStatRemoved' , 'NONE' , s:color.red   , 'NONE')
+hi! link agitDiffAdd diffAdd
+hi! link agitDiffAddMerge agitDiffAdd
+hi! link agitDiffRemove diffDelete
+hi! link agitDiffRemoveMerge agitDiffRemove
+hi! link agitHeader Identifier
 " 1}}}
 
 " Cleaning {{{1
