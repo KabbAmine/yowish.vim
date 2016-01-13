@@ -1,7 +1,5 @@
 # Yowish<small>, a yellowish dark vim colorscheme</small> [![GitHub version](https://badge.fury.io/gh/KabbAmine%2Fyowish.vim.svg)](https://badge.fury.io/gh/KabbAmine%2Fyowish.vim)
 
--------------------------
-
 ## Description
 
 Yowish is a vim dark theme similar to [outlander](https://atom.io/themes/outlander-syntax), with some yellow in it :smiley: (Works well on both GUI & 256-colors terminal).
@@ -46,13 +44,17 @@ The theme provides custom colors for:
 
   ![NERDTree](.img/nerdtree.jpg "NERDTree")
 
-* And 2 [airline](https://github.com/bling/vim-airline) themes:
+* Two [airline](https://github.com/bling/vim-airline) themes:
 
   * yowish
   ![Yowish theme for Airline](.img/airline.jpg "Different vim modes in airline with yowish")
 
   * yowishU (*U for Unity*)
   ![YowishU theme for Airline](.img/airline-yowishU.jpg "Different vim modes in airline with yowishU")
+
+* [Agit](http://github.com/cohama/agit.vim):
+
+  ![agit](.img/agit.jpg "Agit")
 
 ## Installation
 
@@ -124,6 +126,10 @@ Feel free to add screens for other file types.
 `sh`
 
 ![Sh sample](.img/sh.jpg)
+
+Diff with `coffeescript` files.
+
+![Diff](.img/diff.jpg "Vim diff with coffeescript")
 
 ## Notes
 
