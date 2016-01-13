@@ -275,6 +275,7 @@ hi! link jadeClassChar jadeClass
 hi! link jadeDoctype comment
 hi! link jadeIdChar jadeId
 " NERDtree plugin {{{1
+" https://github.com/scrooloose/nerdtree
 call s:Hi('NERDtreeBookmark'  , 'NONE'                 , s:color.lightBlue     , 'NONE')
 call s:Hi('NERDtreeCWD'       , 'NONE'                 , s:color.lightYellow   , 'NONE')
 call s:Hi('NERDtreeDir'       , 'NONE'                 , s:color.textLight     , 'bold')
@@ -292,6 +293,7 @@ hi! link NERDtreeHelpKey NERDtreeFile
 hi! link NERDtreeHelpTitle NERDtreeHelp
 hi! link NERDtreeOpenable NERDtreeDirSlash
 " CtrlP plugin {{{1
+" https://github.com/ctrlpvim/ctrlp.vim (An active fork)
 call s:Hi('CtrlPLinePre'   , 'NONE' , s:color.text        , 'NONE')
 call s:Hi('CtrlPMatch'     , 'NONE' , s:color.lightYellow , 'bold')
 call s:Hi('CtrlPMode1'     , 'NONE' , s:color.textDark    , 'NONE')
@@ -299,6 +301,7 @@ call s:Hi('CtrlPNoEntries' , 'NONE' , s:color.red         , 'bold')
 call s:Hi('CtrlPPrtCursor' , 'NONE' , s:color.lightYellow , 'underline')
 hi! link CtrlPPrtBase CtrlPMatch
 " Agit plugin {{{1
+" https://github.com/cohama/agit.vim
 call s:Hi('agitStatAdded'   , 'NONE' , s:color.green , 'NONE')
 call s:Hi('agitStatFile'    , 'NONE' , s:color.text  , 'bold')
 call s:Hi('agitStatRemoved' , 'NONE' , s:color.red   , 'NONE')
