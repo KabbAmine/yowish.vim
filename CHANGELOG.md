@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+0.6.3 <small>(2016-01-13)</small>
+------------------------------
+
+* A better diff colors
+* Add custom colors for the plugin agit
+* Internal: Add links for used plugins
+
+------------------------------
+
 0.6.2 <small>(2016-01-11)</small>
 ------------------------------
 
