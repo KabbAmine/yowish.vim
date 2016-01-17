@@ -2,7 +2,7 @@
 
 " Version      : 0.6.3
 " Creation     : 2015-01-09
-" Modification : 2016-01-13
+" Modification : 2016-01-17
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -115,6 +115,9 @@ call s:Hi('Visual'       , s:color.selected         , 'NONE'                  , 
 call s:Hi('WarningMsg'   , 'NONE'                   , s:color.yellow          , 'bold')
 call s:Hi('WildMenu'     , s:color.background       , s:color.yellow          , 'NONE')
 hi! link CursorColumn CursorLine
+hi! link diffAdded DiffAdd
+hi! link diffChanged DiffChange
+hi! link diffRemoved DiffDelete
 hi! link Folded FoldColumn
 hi! link NonText Conceal
 hi! link SignColumn FoldColumn
