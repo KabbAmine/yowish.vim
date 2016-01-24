@@ -2,7 +2,7 @@
 
 " Version      : 0.6.3
 " Creation     : 2015-01-09
-" Modification : 2016-01-17
+" Modification : 2016-01-24
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -120,6 +120,8 @@ hi! link diffChanged DiffChange
 hi! link diffRemoved DiffDelete
 hi! link Folded FoldColumn
 hi! link NonText Conceal
+hi! link qfLineNr Statement
+hi! link qfSeparator qfLineNr
 hi! link SignColumn FoldColumn
 hi! link VisualNOS Visual
 " Vim {{{1
