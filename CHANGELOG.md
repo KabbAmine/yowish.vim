@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+0.6.4 <small>(2016-01-24)</small>
+------------------------------
+
+* Add more diff colors
+* Set better colors to quickfix & location list windows
+
+------------------------------
+
 0.6.3 <small>(2016-01-13)</small>
 ------------------------------
 

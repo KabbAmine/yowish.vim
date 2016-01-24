@@ -1,6 +1,6 @@
 " Yowish colorscheme.
 
-" Version      : 0.6.3
+" Version      : 0.6.4
 " Creation     : 2015-01-09
 " Modification : 2016-01-24
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
