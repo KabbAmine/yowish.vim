@@ -1,4 +1,7 @@
-# Yowish<small>, a yellowish dark vim colorscheme</small> [![GitHub version](https://badge.fury.io/gh/KabbAmine%2Fyowish.vim.svg)](https://badge.fury.io/gh/KabbAmine%2Fyowish.vim)
+# Yowish<small>, a yellowish dark vim colorscheme</small>
+
+![Badge version](https://img.shields.io/badge/version-0.6.3-blue.svg?style=flat-square "Badge for version")
+![License version](https://img.shields.io/badge/license-public-blue.svg?style=flat-square "Badge for license")
 
 ## Description
 
@@ -80,7 +83,7 @@ Currently, only one option is present, but this will change in the future.
 
 e.g
 
-```
+```vim
 let g:yowish = {}
 let g:yowish.term_italic = 1
 
@@ -140,14 +143,11 @@ And if you're asking yourself, yeah I like yellow :smile:
 
 ## Todo
 
-- Support more plugins
+- Support more plugins if needed
 - Better support for the following file types (PR are more than welcome):
-  - [x] [`javascript`](https://github.com/KabbAmine/yowish.vim/issues/3)
-  - [x] [`ruby`](https://github.com/KabbAmine/yowish.vim/issues/1)
   - [ ] `python`
   - [ ] `c`
   - [ ] `java`
-- A simple html page for screenshots
 
 ## Thanks
 
