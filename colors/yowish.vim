@@ -42,10 +42,11 @@ if !exists('g:yowish')
 	let g:yowish = {}
 endif
 let g:yowish = {
-			\ 'term_italic': !has_key(g:yowish, 'term_italic') ? 0 : g:yowish.term_italic,
-			\ 'ctrlp'      : !has_key(g:yowish, 'ctrlp') ? 1 : g:yowish.ctrlp,
-			\ 'nerdtree'   : !has_key(g:yowish, 'nerdtree') ? 1 : g:yowish.nerdtree,
-			\ 'agit'       : !has_key(g:yowish, 'agit') ? 1 : g:yowish.agit
+			\ 'term_italic'  : !has_key(g:yowish, 'term_italic') ? 0 : g:yowish.term_italic,
+			\ 'ctrlp'        : !has_key(g:yowish, 'ctrlp')       ? 1 : g:yowish.ctrlp,
+			\ 'nerdtree'     : !has_key(g:yowish, 'nerdtree')    ? 1 : g:yowish.nerdtree,
+			\ 'agit'         : !has_key(g:yowish, 'agit')        ? 1 : g:yowish.agit,
+			\ 'unite'        : !has_key(g:yowish, 'unite')       ? 1 : g:yowish.unite
 		\ }
 " Highlighting function {{{1
 fun! s:Hi(groupName, bgColor, fgColor, opt)
@@ -323,6 +324,16 @@ if g:yowish.agit
 	hi! link agitDiffRemove diffDelete
 	hi! link agitDiffRemoveMerge agitDiffRemove
 	hi! link agitHeader Identifier
+endif
+" Unite plugin {{{1
+" https://github.com/shougo/unite.vim
+if g:yowish.unite
+	call s:Hi('uniteCandidateIcon'  , 'NONE' , s:color.textExtraDark , 'NONE')
+	call s:Hi('uniteInputLine'      , 'NONE' , s:color.lightYellow   , 'bold')
+	call s:Hi('uniteQuickMatchText' , 'NONE' , s:color.lightRed      , 'bold')
+	hi! link uniteCandidateInputKeyword uniteInputLine
+	hi! link uniteInputPrompt uniteInputLine
+	hi! link uniteSource__GrepPattern uniteInputLine
 endif
 " 1}}}
 
