@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+0.7.0 <small>(2016-02-05)</small>
+------------------------------
+
+* Add possibility to enable/disable custom colors for plugins
+* Add custom colors for the plugin Unite
+
+------------------------------
+
 0.6.4 <small>(2016-01-24)</small>
 ------------------------------
 
