@@ -2,7 +2,7 @@
 
 " Version      : 0.6.4
 " Creation     : 2015-01-09
-" Modification : 2016-01-24
+" Modification : 2016-02-05
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -42,7 +42,10 @@ if !exists('g:yowish')
 	let g:yowish = {}
 endif
 let g:yowish = {
-			\ 'term_italic' : !has_key(g:yowish, 'term_italic') ? 0 : g:yowish.term_italic,
+			\ 'term_italic': !has_key(g:yowish, 'term_italic') ? 0 : g:yowish.term_italic,
+			\ 'ctrlp'      : !has_key(g:yowish, 'ctrlp') ? 1 : g:yowish.ctrlp,
+			\ 'nerdtree'   : !has_key(g:yowish, 'nerdtree') ? 1 : g:yowish.nerdtree,
+			\ 'agit'       : !has_key(g:yowish, 'agit') ? 1 : g:yowish.agit
 		\ }
 " Highlighting function {{{1
 fun! s:Hi(groupName, bgColor, fgColor, opt)
@@ -281,40 +284,46 @@ hi! link jadeDoctype comment
 hi! link jadeIdChar jadeId
 " NERDtree plugin {{{1
 " https://github.com/scrooloose/nerdtree
-call s:Hi('NERDtreeBookmark'  , 'NONE'                 , s:color.lightBlue     , 'NONE')
-call s:Hi('NERDtreeCWD'       , 'NONE'                 , s:color.lightYellow   , 'NONE')
-call s:Hi('NERDtreeDir'       , 'NONE'                 , s:color.textLight     , 'bold')
-call s:Hi('NERDtreeFile'      , 'NONE'                 , s:color.text          , 'NONE')
-call s:Hi('NERDtreeHelp'      , 'NONE'                 , s:color.lightRed      , 'NONE')
-call s:Hi('NERDtreeToggleOff' , s:color.backgroundDark , s:color.red           , 'bold')
-call s:Hi('NERDtreeToggleOn'  , s:color.backgroundDark , s:color.green         , 'bold')
-call s:Hi('NERDtreeUp'        , 'NONE'                 , s:color.textExtraDark , 'NONE')
-hi! link NERDtreeBookmarkName NERDtreeFile
-hi! link NERDtreeBookmarksHeader NERDtreeCWD
-hi! link NERDtreeClosable NERDtreeDirSlash
-hi! link NERDtreeDirSlash NERDtreeCWD
-hi! link NERDtreeHelpCommand NERDtreeFile
-hi! link NERDtreeHelpKey NERDtreeFile
-hi! link NERDtreeHelpTitle NERDtreeHelp
-hi! link NERDtreeOpenable NERDtreeDirSlash
+if g:yowish.nerdtree
+	call s:Hi('NERDtreeBookmark'  , 'NONE'                 , s:color.lightBlue     , 'NONE')
+	call s:Hi('NERDtreeCWD'       , 'NONE'                 , s:color.lightYellow   , 'NONE')
+	call s:Hi('NERDtreeDir'       , 'NONE'                 , s:color.textLight     , 'bold')
+	call s:Hi('NERDtreeFile'      , 'NONE'                 , s:color.text          , 'NONE')
+	call s:Hi('NERDtreeHelp'      , 'NONE'                 , s:color.lightRed      , 'NONE')
+	call s:Hi('NERDtreeToggleOff' , s:color.backgroundDark , s:color.red           , 'bold')
+	call s:Hi('NERDtreeToggleOn'  , s:color.backgroundDark , s:color.green         , 'bold')
+	call s:Hi('NERDtreeUp'        , 'NONE'                 , s:color.textExtraDark , 'NONE')
+	hi! link NERDtreeBookmarkName NERDtreeFile
+	hi! link NERDtreeBookmarksHeader NERDtreeCWD
+	hi! link NERDtreeClosable NERDtreeDirSlash
+	hi! link NERDtreeDirSlash NERDtreeCWD
+	hi! link NERDtreeHelpCommand NERDtreeFile
+	hi! link NERDtreeHelpKey NERDtreeFile
+	hi! link NERDtreeHelpTitle NERDtreeHelp
+	hi! link NERDtreeOpenable NERDtreeDirSlash
+endif
 " CtrlP plugin {{{1
 " https://github.com/ctrlpvim/ctrlp.vim (An active fork)
-call s:Hi('CtrlPLinePre'   , 'NONE' , s:color.text        , 'NONE')
-call s:Hi('CtrlPMatch'     , 'NONE' , s:color.lightYellow , 'bold')
-call s:Hi('CtrlPMode1'     , 'NONE' , s:color.textDark    , 'NONE')
-call s:Hi('CtrlPNoEntries' , 'NONE' , s:color.red         , 'bold')
-call s:Hi('CtrlPPrtCursor' , 'NONE' , s:color.lightYellow , 'underline')
-hi! link CtrlPPrtBase CtrlPMatch
+if g:yowish.ctrlp
+	call s:Hi('CtrlPLinePre'   , 'NONE' , s:color.text        , 'NONE')
+	call s:Hi('CtrlPMatch'     , 'NONE' , s:color.lightYellow , 'bold')
+	call s:Hi('CtrlPMode1'     , 'NONE' , s:color.textDark    , 'NONE')
+	call s:Hi('CtrlPNoEntries' , 'NONE' , s:color.red         , 'bold')
+	call s:Hi('CtrlPPrtCursor' , 'NONE' , s:color.lightYellow , 'underline')
+	hi! link CtrlPPrtBase CtrlPMatch
+endif
 " Agit plugin {{{1
 " https://github.com/cohama/agit.vim
-call s:Hi('agitStatAdded'   , 'NONE' , s:color.green , 'NONE')
-call s:Hi('agitStatFile'    , 'NONE' , s:color.text  , 'bold')
-call s:Hi('agitStatRemoved' , 'NONE' , s:color.red   , 'NONE')
-hi! link agitDiffAdd diffAdd
-hi! link agitDiffAddMerge agitDiffAdd
-hi! link agitDiffRemove diffDelete
-hi! link agitDiffRemoveMerge agitDiffRemove
-hi! link agitHeader Identifier
+if g:yowish.agit
+	call s:Hi('agitStatAdded'   , 'NONE' , s:color.green , 'NONE')
+	call s:Hi('agitStatFile'    , 'NONE' , s:color.text  , 'bold')
+	call s:Hi('agitStatRemoved' , 'NONE' , s:color.red   , 'NONE')
+	hi! link agitDiffAdd diffAdd
+	hi! link agitDiffAddMerge agitDiffAdd
+	hi! link agitDiffRemove diffDelete
+	hi! link agitDiffRemoveMerge agitDiffRemove
+	hi! link agitHeader Identifier
+endif
 " 1}}}
 
 " Cleaning {{{1
