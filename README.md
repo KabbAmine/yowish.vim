@@ -5,21 +5,21 @@
 
 ## Description
 
-Yowish is a vim dark theme similar to [outlander](https://atom.io/themes/outlander-syntax), with some yellow in it :smiley: (Works well on both GUI & 256-colors terminal).
+Yowish is a vim dark theme similar to [outlander](https://atom.io/themes/outlander-syntax), with some yellow in it :smiley:  
+It works well on both GUI & 256-colors terminal.
 
 ![Viml code](.img/viml.png "A vimscript sample")
 
-It's a theme, and a theme needs [screens](#screens).
+See supported [file types](#filetypes), customized [plugins](#plugins) and [screens](#screens).
 
 ## GUI vs terminal
 
-The colors in 256-color terminals are quite similar to the ones in the GUI version.
-
+The colors in 256-color terminals are quite similar to the ones in the GUI version.  
 Here is a comparison between GVim and xfce-terminal with a standard color palette:
 
 ![GUI vs Terminal](.img/term-vs-gui.png "GVim vs xfce-terminal screenshots")
 
-## Supported file types
+## Supported file types <a id="filetypes"></a>
 
 Normally, any file type should be good looking, but some are more customized than others, check the [screens](#screens).
 
@@ -35,28 +35,26 @@ The theme uses some elements from the following syntax plugins:
 * `markdown`: [gabrielelana/vim-markdown](https://github.com/gabrielelana/vim-markdown)
 * `php`: [StanAngeloff/php.vim](https://github.com/StanAngeloff/php.vim)
 
-## Other plugins
+## Other plugins <a id="plugins"></a>
 
-The theme provides custom colors for:
+The theme provides custom colors for the following plugins (Note that you can disable them, see [configuration](#configuration) for that).
 
-* [CtrlP](https://github.com/ctrlpvim/ctrlp.vim)
+* [CtrlP](https://github.com/ctrlpvim/ctrlp.vim)  
+![CtrlP](.img/ctrlp.jpg "CtrlP")
 
-  ![CtrlP](.img/ctrlp.jpg "CtrlP")
+* [Unite](https://github.com/Shougo/unite.vim)  
+![Unite](.img/unite.jpg "Unite")
 
-* [NERDTree](https://github.com/scrooloose/nerdtree)
+* [NERDTree](https://github.com/scrooloose/nerdtree)  
+![NERDTree](.img/nerdtree.jpg "NERDTree")
 
-  ![NERDTree](.img/nerdtree.jpg "NERDTree")
-
-* Two [airline](https://github.com/bling/vim-airline) themes:
-
-  * yowish
+* Two [airline](https://github.com/vim-airline/vim-airline) themes:  
+  * yowish  
   ![Yowish theme for Airline](.img/airline.jpg "Different vim modes in airline with yowish")
-
-  * yowishU (*U for Unity*)
+  * yowishU (*U for Unity*)  
   ![YowishU theme for Airline](.img/airline-yowishU.jpg "Different vim modes in airline with yowishU")
 
-* [Agit](http://github.com/cohama/agit.vim):
-
+* [Agit](http://github.com/cohama/agit.vim)  
   ![agit](.img/agit.jpg "Agit")
 
 ## Installation
@@ -71,32 +69,41 @@ Or in a better way, use a vim plugin manager:
 | [Vundle](https://github.com/gmarik/Vundle.vim)         | `Plugin 'KabbAmine/yowish.vim'`    | `PluginInstall`        |
 | [NeoBundle](https://github.com/Shougo/neobundle.vim)   | `NeoBundle 'KabbAmine/yowish.vim'` | `NeoBundleInstall`     |
 
-## Configuration
+## Configuration <a id="configuration"></a>
 
-The user configuration is stocked in a global dictionary `g:yowish` where:
+The configuration of the plugin is stocked in one global dictionary `g:yowish`.  
+To define/modify an option you can either:
 
-| key                       | default value             | description                             |
-| ------------------------- | ------------------------- | --------------------------------        |
-| `term_italic`             | `0`                       | Enable(1)/Disable(0) italic in terminal |
+```
+let g:yowish = {}
+let g:yowish.option1 = 'foo'
+let g:yowish.option2 = 0
+```
 
-Currently, only one option is present, but this will change in the future.
-
-e.g
+Or:
 
 ```vim
-let g:yowish = {}
-let g:yowish.term_italic = 1
-
-" Or
-
 let g:yowish = {
-			\ 'term_italic': 1,
-			\ }
+			\ 'option1': 'foo',
+			\ 'option2': 0
+		\ }
 ```
+
+## Options
+
+**Be sure to define options before loading the colorescheme**
+
+| key                       | default value             | description                      |
+| ------------------------- | ------------------------- | -------------------------------- |
+| `term_italic`             | `0`                       | Use italic in terminal           |
+| `ctrlp`                   | `1`                       | Custom colors for CtrlP          |
+| `unite`                   | `1`                       | Custom colors for Unite          |
+| `nerdtree`                | `1`                       | Custom colors for NERDTree       |
+| `agit`                    | `1`                       | Custom colors for Agit           |
 
 ## Screens <a id="screens"></a>
 
-Feel free to add screens for other file types.
+Feel free to add screens for other file types or plugins.
 
 `css`
 
