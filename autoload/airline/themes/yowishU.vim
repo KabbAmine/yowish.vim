@@ -78,17 +78,18 @@ let g:airline#themes#yowishU#palette.inactive = airline#themes#generate_color_ma
 let g:airline#themes#yowishU#palette.inactive_modified = {
 			\ 'airline_c': [s:color.textExtraDark[0], s:color.backgroundDark[0], s:color.textExtraDark[1], s:color.backgroundDark[1] , 'bold'] ,
 		\ }
-" Warningmsg {{{1
-" Same for all modes
-for s:m in ['normal', 'insert', 'visual', 'replace', 'normal_modified', 'insert_modified', 'insert_paste', 'visual_modified', 'replace_modified']
+" Messages {{{1
+let s:modes = ['normal', 'insert', 'visual', 'replace', 'normal_modified', 'insert_modified', 'insert_paste', 'visual_modified', 'replace_modified']
+"""""" Warning {{{2
+for s:m in s:modes
 	let g:airline#themes#yowishU#palette[s:m]['airline_warning'] =
 				\ [s:color.backgroundDark[0], s:color.yellow[0], s:color.backgroundDark[1], s:color.yellow[1], 'bold']
 endfor
-" Errormsg {{{1
-for s:m in ['normal', 'insert', 'visual', 'replace', 'normal_modified', 'insert_modified', 'insert_paste', 'visual_modified', 'replace_modified']
+"""""" Error {{{2
+for s:m in s:modes
 	let g:airline#themes#yowishU#palette[s:m]['airline_error'] =
 				\ [s:color.textLight[0], s:color.red[0], s:color.textLight[1], s:color.red[1], 'bold']
-endfor
+endfor " 2}}}
 " Accents {{{1
 let g:airline#themes#yowishU#palette.accents = {
 			\ 'red':  [s:color.red[0], '', s:color.red[1], '']
