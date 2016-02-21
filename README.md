@@ -74,7 +74,7 @@ Or in a better way, use a vim plugin manager:
 The configuration of the plugin is stocked in one global dictionary `g:yowish`.  
 To define/modify an option you can either:
 
-```
+```vim
 let g:yowish = {}
 let g:yowish.option1 = 'foo'
 let g:yowish.option2 = 0
@@ -91,7 +91,7 @@ let g:yowish = {
 
 ## Options
 
-**Be sure to define options before loading the colorescheme**
+**Be sure to define options before loading the colorscheme**
 
 | key                       | default value             | description                      |
 | ------------------------- | ------------------------- | -------------------------------- |
