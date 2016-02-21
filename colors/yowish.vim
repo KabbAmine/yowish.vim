@@ -2,7 +2,7 @@
 
 " Version      : 0.7.0
 " Creation     : 2015-01-09
-" Modification : 2016-02-05
+" Modification : 2016-02-21
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -275,14 +275,14 @@ hi! link jsStorageClass javaScriptIdentifier
 call s:Hi('rubyBlock'    , 'NONE' , 'NONE'              , 'bold')
 call s:Hi('rubyConstant' , 'NONE' , s:color.lightYellow , 'NONE')
 call s:Hi('rubyFunction' , 'NONE' , s:color.lightYellow , 'NONE')
-" Jade {{{1
-" For https://github.com/digitaltoad/vim-jade
-call s:Hi('jadeAttributes' , 'NONE' , s:color.text        , 'NONE')
-call s:Hi('jadeClass'      , 'NONE' , s:color.lightYellow , 'NONE')
-call s:Hi('jadeTag'        , 'NONE' , s:color.lightRed    , 'NONE')
-hi! link jadeClassChar jadeClass
-hi! link jadeDoctype comment
-hi! link jadeIdChar jadeId
+" Pug {{{1
+" For https://github.com/digitaltoad/vim-pug
+call s:Hi('pugAttributes' , 'NONE' , s:color.text        , 'NONE')
+call s:Hi('pugClass'      , 'NONE' , s:color.lightYellow , 'NONE')
+call s:Hi('pugTag'        , 'NONE' , s:color.lightRed    , 'NONE')
+hi! link pugClassChar pugClass
+hi! link pugDoctype comment
+hi! link pugIdChar pugId
 " NERDtree plugin {{{1
 " https://github.com/scrooloose/nerdtree
 if g:yowish.nerdtree

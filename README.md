@@ -28,7 +28,7 @@ Normally, any file type should be good looking, but some are more customized tha
 The theme uses some elements from the following syntax plugins:
 
 * `html`: [othree/html5.vim](https://github.com/othree/html5.vim)
-* `jade`: [vim-jade](https://github.com/digitaltoad/vim-jade)
+* `pug`: [vim-pug](https://github.com/digitaltoad/vim-pug) (Formerly `jade`)
 * `javascript`:
   - [othree/yajs.vim](https://github.com/othree/yajs.vim)
   - [pangloss/vim-javascript](https://github.com/pangloss/vim-javascript)
@@ -113,9 +113,9 @@ Feel free to add screens for other file types or plugins.
 
 ![Html sample](.img/html.jpg)
 
-`jade`
+`pug`
 
-![Jade sample](.img/jade.jpg)
+![Pug sample](.img/pug.jpg)
 
 `javascript`
 
