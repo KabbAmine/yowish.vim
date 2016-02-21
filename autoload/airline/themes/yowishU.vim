@@ -1,5 +1,5 @@
 " Creation     : 2016-01-08
-" Modification : 2016-01-09
+" Modification : 2016-02-21
 
 " Colors[hex, term256] {{{1
 let s:color = {
@@ -83,6 +83,11 @@ let g:airline#themes#yowishU#palette.inactive_modified = {
 for s:m in ['normal', 'insert', 'visual', 'replace', 'normal_modified', 'insert_modified', 'insert_paste', 'visual_modified', 'replace_modified']
 	let g:airline#themes#yowishU#palette[s:m]['airline_warning'] =
 				\ [s:color.backgroundDark[0], s:color.yellow[0], s:color.backgroundDark[1], s:color.yellow[1], 'bold']
+endfor
+" Errormsg {{{1
+for s:m in ['normal', 'insert', 'visual', 'replace', 'normal_modified', 'insert_modified', 'insert_paste', 'visual_modified', 'replace_modified']
+	let g:airline#themes#yowishU#palette[s:m]['airline_error'] =
+				\ [s:color.textLight[0], s:color.red[0], s:color.textLight[1], s:color.red[1], 'bold']
 endfor
 " Accents {{{1
 let g:airline#themes#yowishU#palette.accents = {
