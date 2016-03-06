@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+0.7.1 <small>(2016-03-06)</small>
+------------------------------
+
+* Add custom colors for the plugin signjk-motion
+* Internal: Minor refactoring
+* Rename jade to pug
+* Add airline_error colors to airline themes
+
+------------------------------
+
 0.7.0 <small>(2016-02-05)</small>
 ------------------------------
 

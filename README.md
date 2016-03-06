@@ -1,6 +1,6 @@
 # Yowish<small>, a yellowish dark vim colorscheme</small>
 
-![Badge version](https://img.shields.io/badge/version-0.7.0-blue.svg?style=flat-square "Badge for version")
+![Badge version](https://img.shields.io/badge/version-0.7.1-blue.svg?style=flat-square "Badge for version")
 ![License version](https://img.shields.io/badge/license-public-blue.svg?style=flat-square "Badge for license")
 
 ## Description
