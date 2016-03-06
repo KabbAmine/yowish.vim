@@ -2,7 +2,7 @@
 
 " Version      : 0.7.0
 " Creation     : 2015-01-09
-" Modification : 2016-02-21
+" Modification : 2016-03-06
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -46,7 +46,8 @@ let g:yowish = {
 			\ 'ctrlp'        : !has_key(g:yowish, 'ctrlp')       ? 1 : g:yowish.ctrlp,
 			\ 'nerdtree'     : !has_key(g:yowish, 'nerdtree')    ? 1 : g:yowish.nerdtree,
 			\ 'agit'         : !has_key(g:yowish, 'agit')        ? 1 : g:yowish.agit,
-			\ 'unite'        : !has_key(g:yowish, 'unite')       ? 1 : g:yowish.unite
+			\ 'unite'        : !has_key(g:yowish, 'unite')       ? 1 : g:yowish.unite,
+			\ 'signjk'       : !has_key(g:yowish, 'signjk')      ? 1 : g:yowish.signjk
 		\ }
 " Highlighting function {{{1
 fun! s:Hi(groupName, bgColor, fgColor, opt)
@@ -334,6 +335,12 @@ if g:yowish.unite
 	hi! link uniteCandidateInputKeyword uniteInputLine
 	hi! link uniteInputPrompt uniteInputLine
 	hi! link uniteSource__GrepPattern uniteInputLine
+endif
+" Signjk plugin {{{1
+" https://github.com/haya14busa/vim-signjk-motion
+if g:yowish.signjk
+	call s:Hi('SignjkTarget2' , s:color.backgroundDark  , s:color.yellow , 'NONE')
+	call s:Hi('SignjkTarget'  , s:color.backgroundLight , s:color.yellow , 'bold')
 endif
 " 1}}}
 
