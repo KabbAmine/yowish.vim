@@ -39,14 +39,17 @@ The theme uses some elements from the following syntax plugins:
 
 The theme provides custom colors for the following plugins (Note that you can disable them, see [configuration](#configuration) for that).
 
+* [Agit](http://github.com/cohama/agit.vim)  
+![agit](.img/agit.jpg "Agit")
+
 * [CtrlP](https://github.com/ctrlpvim/ctrlp.vim)  
 ![CtrlP](.img/ctrlp.jpg "CtrlP")
 
-* [Unite](https://github.com/Shougo/unite.vim)  
-![Unite](.img/unite.jpg "Unite")
-
 * [NERDTree](https://github.com/scrooloose/nerdtree)  
 ![NERDTree](.img/nerdtree.jpg "NERDTree")
+
+* [Signjk](https://github.com/haya14busa/vim-signjk-motion)  
+![Signjk](.img/signjk.png "Signjk")
 
 * Two [airline](https://github.com/vim-airline/vim-airline) themes:  
   * yowish  
@@ -54,8 +57,8 @@ The theme provides custom colors for the following plugins (Note that you can di
   * yowishU (*U for Unity*)  
   ![YowishU theme for Airline](.img/airline-yowishU.jpg "Different vim modes in airline with yowishU")
 
-* [Agit](http://github.com/cohama/agit.vim)  
-  ![agit](.img/agit.jpg "Agit")
+* [Unite](https://github.com/Shougo/unite.vim)  
+![Unite](.img/unite.jpg "Unite")
 
 ## Installation
 
@@ -100,6 +103,7 @@ let g:yowish = {
 | `unite`                   | `1`                       | Custom colors for Unite          |
 | `nerdtree`                | `1`                       | Custom colors for NERDTree       |
 | `agit`                    | `1`                       | Custom colors for Agit           |
+| `signjk`                  | `1`                       | Custom colors for Signjk         |
 
 ## Screens <a id="screens"></a>
 
