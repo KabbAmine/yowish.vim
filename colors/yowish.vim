@@ -2,7 +2,7 @@
 
 " Version      : 0.7.1
 " Creation     : 2015-01-09
-" Modification : 2016-03-06
+" Modification : 2016-03-18
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -322,6 +322,8 @@ if g:yowish.agit
 	call s:Hi('agitStatRemoved' , 'NONE' , s:color.red   , 'NONE')
 	hi! link agitDiffAdd diffAdd
 	hi! link agitDiffAddMerge agitDiffAdd
+	hi! link agitDiffFileName agitDiffIndex
+	hi! link agitDiffIndex WarningMsg
 	hi! link agitDiffRemove diffDelete
 	hi! link agitDiffRemoveMerge agitDiffRemove
 	hi! link agitHeader Identifier
