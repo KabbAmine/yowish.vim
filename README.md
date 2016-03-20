@@ -48,6 +48,9 @@ The theme provides custom colors for the following plugins (Note that you can di
 * [NERDTree](https://github.com/scrooloose/nerdtree)  
 ![NERDTree](.img/nerdtree.jpg "NERDTree")
 
+* [Lightline](https://github.com/itchyny/lightline.vim)  
+![Lightline](.img/lightline.jpg "Lightline")
+
 * [Signjk](https://github.com/haya14busa/vim-signjk-motion)  
 ![Signjk](.img/signjk.png "Signjk")
 
