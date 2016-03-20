@@ -1,5 +1,5 @@
 " Creation     : 2015-01-12
-" Modification : 2016-02-21
+" Modification : 2016-03-20
 
 " Colors[hex, term256] {{{1
 let s:color = {
@@ -21,8 +21,6 @@ let s:color = {
 			\ 'textLight'       : ['#ebebeb','255'],
 			\ 'yellow'          : ['#ffbe3c','215'],
 			\ }
-let s:color.columnBackground = s:color.background
-let s:color.columnElements = s:color.comment
 " 1}}}
 
 " *********************
