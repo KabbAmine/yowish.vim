@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+0.7.2 <small>(2016-03-20)</small>
+------------------------------
+
+* Add more colors to Agit
+* Add a theme for Lightline
+* Internal: Some code cleaning
+
+------------------------------
+
 0.7.1 <small>(2016-03-06)</small>
 ------------------------------
 
