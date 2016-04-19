@@ -1,26 +1,9 @@
 " Creation     : 2016-01-08
-" Modification : 2016-03-20
+" Modification : 2016-04-19
 
-" Colors[hex, term256] {{{1
-let s:color = {
-			\ 'background'      : ['#222222','235'],
-			\ 'backgroundDark'  : ['#0e0e0e','232'],
-			\ 'backgroundLight' : ['#393939','236'],
-			\ 'comment'         : ['#6e6e6e','242'],
-			\ 'green'           : ['#2acf2a','40'],
-			\ 'lightBlue'       : ['#6699cc','67'],
-			\ 'lightGreen'      : ['#99cc99','108'],
-			\ 'lightRed'        : ['#f2777a','203'],
-			\ 'lightViolet'     : ['#d09cea','171'],
-			\ 'lightYellow'     : ['#ffcc66','222'],
-			\ 'red'             : ['#f01d22','160'],
-			\ 'selected'        : ['#373b41','234'],
-			\ 'text'            : ['#cbcbcb','251'],
-			\ 'textDark'        : ['#bebebe','249'],
-			\ 'textExtraDark'   : ['#8c8c8c','244'],
-			\ 'textLight'       : ['#ebebeb','255'],
-			\ 'yellow'          : ['#ffbe3c','215'],
-			\ }
+" Get config & colors [hex, term256] {{{1
+call yowish#SetConfig()
+let s:color = g:yowish.colors
 " 1}}}
 
 " *********************
