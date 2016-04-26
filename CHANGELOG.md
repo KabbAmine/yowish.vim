@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+0.7.3 <small>(2016-04-26)</small>
+------------------------------
+
+* Add a new option for customizing the color palette used in the theme.
+* Internal: Make the whole configuration in one file.
+
+------------------------------
+
 0.7.2 <small>(2016-03-20)</small>
 ------------------------------
 
