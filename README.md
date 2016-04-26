@@ -12,6 +12,8 @@ It works well on both GUI & 256-colors terminal.
 
 See supported [file types](#filetypes), customized [plugins](#plugins) and [screens](#screens).
 
+**Note** [You can even use your own colors.](#custom-colors).
+
 ## GUI vs terminal
 
 The colors in 256-color terminals are quite similar to the ones in the GUI version.  
@@ -99,14 +101,49 @@ let g:yowish = {
 
 **Be sure to define options before loading the colorscheme**
 
-| key                       | default value             | description                      |
-| ------------------------- | ------------------------- | -------------------------------- |
-| `term_italic`             | `0`                       | Use italic in terminal           |
-| `ctrlp`                   | `1`                       | Custom colors for CtrlP          |
-| `unite`                   | `1`                       | Custom colors for Unite          |
-| `nerdtree`                | `1`                       | Custom colors for NERDTree       |
-| `agit`                    | `1`                       | Custom colors for Agit           |
-| `signjk`                  | `1`                       | Custom colors for Signjk         |
+| key                       | default value                              | description                      |
+| ------------------------- | ----------------------------------------   | -------------------------------- |
+| `colors`                  | See [custom color palette](#custom-colors) | Color palette                    |
+| `term_italic`             | `0`                                        | Use italic in terminal           |
+| `ctrlp`                   | `1`                                        | Custom colors for CtrlP          |
+| `unite`                   | `1`                                        | Custom colors for Unite          |
+| `nerdtree`                | `1`                                        | Custom colors for NERDTree       |
+| `agit`                    | `1`                                        | Custom colors for Agit           |
+| `signjk`                  | `1`                                        | Custom colors for Signjk         |
+
+#### Custom color palette <a id="custom-colors"></a>
+
+Starting from version `0.7.3` you can modify the color palette used in the theme using `g:yowish.colors`.  
+The values by default are:
+
+```vim
+g:yowish.colors = {
+			\	'background'        : ['#222222', '235'],
+			\	'backgroundDark'    : ['#0e0e0e', '232'],
+			\	'backgroundLight'   : ['#393939', '236'],
+			\	'comment'           : ['#6e6e6e', '242'],
+			\	'green'             : ['#2acf2a', '40'],
+			\	'lightBlue'         : ['#6699cc', '67'],
+			\	'lightGreen'        : ['#99cc99','108']
+			\	'lightRed'          : ['#f2777a', '203'],
+			\	'lightViolet'       : ['#d09cea', '171'],
+			\	'lightYellow'       : ['#ffcc66', '222'],
+			\	'red'               : ['#f01d22', '160'],
+			\	'selected'          : ['#373b41', '234'],
+			\	'text'              : ['#cbcbcb', '251'],
+			\	'textDark'          : ['#bebebe', '249'],
+			\	'textExtraDark'     : ['#8c8c8c', '244'],
+			\	'textLight'         : ['#ebebeb', '255'],
+			\	'yellow'            : ['#ffbe3c', '215'],
+			\ }
+```
+
+The value of each key is a list containing:
+
+1. A hexadecimal color for GUI.
+2. The equivalent 256-color for supported terminals.
+
+An small example of customization [here](https://github.com/KabbAmine/yowish.vim/issues/6#issuecomment-211999905).
 
 ## Screens <a id="screens"></a>
 
