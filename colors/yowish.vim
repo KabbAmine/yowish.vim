@@ -2,7 +2,7 @@
 
 " Version      : 0.7.3
 " Creation     : 2015-01-09
-" Modification : 2016-04-26
+" Modification : 2016-07-18
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -223,6 +223,7 @@ hi! link markdownEmoticonKeyword markdownH1
 hi! link markdownInlineCode markdownCode
 hi! link markdownItemDelimiter markdownListMarker
 hi! link markdownLinkUrl markdownUrl
+hi! link markdownStrike normal
 " Javascript {{{1
 call s:Hi('javaScriptBraces'     , 'NONE' , s:color.textLight   , 'bold')
 call s:Hi('javaScriptIdentifier' , 'NONE' , s:color.lightYellow , 'NONE')
