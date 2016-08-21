@@ -2,7 +2,7 @@
 
 " Version      : 0.7.3
 " Creation     : 2015-01-09
-" Modification : 2016-07-19
+" Modification : 2016-08-22
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -96,6 +96,7 @@ hi! link diffChanged DiffChange
 hi! link diffRemoved DiffDelete
 hi! link Folded FoldColumn
 hi! link NonText Conceal
+hi! link qfFileName Comment
 hi! link qfLineNr Statement
 hi! link qfSeparator qfLineNr
 hi! link SignColumn FoldColumn
