@@ -51,7 +51,7 @@ call s:Hi('String'    , 'NONE' , s:color.lightGreen  , 'NONE')
 hi! link Character String
 " Default {{{1
 call s:Hi('ColorColumn'  , s:color.backgroundDark   , s:color.yellow          , 'bold')
-call s:Hi('Comment'      , 'NONE'                   , s:color.comment         , 'NONE')
+call s:Hi('Comment'      , 'NONE'                   , s:color.comment         , 'italic')
 call s:Hi('Conceal'      , 'NONE'                   , s:color.backgroundLight , 'NONE')
 call s:Hi('CursorLineNr' , 'NONE'                   , s:color.lightYellow     , 'NONE')
 call s:Hi('CursorLine'   , s:color.backgroundLight  , 'NONE'                  , 'NONE')
@@ -77,7 +77,7 @@ call s:Hi('Question'     , 'NONE'                   , s:color.lightGreen      , 
 call s:Hi('Search'       , s:color.yellow           , s:color.backgroundDark  , 'bold')
 call s:Hi('SpecialKey'   , 'NONE'                   , s:color.backgroundLight , 'NONE')
 call s:Hi('Special'      , 'NONE'                   , s:color.textLight       , 'NONE')
-call s:Hi('SpellBad'     , 'NONE'                   , 'NONE'                  , 'undercurl')
+call s:Hi('SpellBad'     , 'NONE'                   , s:color.red             , 'undercurl')
 call s:Hi('StatusLineNC' , s:color.backgroundLight  , s:color.text            , 'NONE')
 call s:Hi('StatusLine'   , s:color.yellow           , s:color.background      , 'NONE')
 call s:Hi('TabLineFill'  , 'NONE'                   , s:color.text            , 'NONE')
