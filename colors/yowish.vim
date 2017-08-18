@@ -234,6 +234,7 @@ call s:Hi('javaScriptNumber'     , 'NONE' , s:color.lightRed    , 'NONE')
 call s:Hi('JavascriptBlock'    , 'NONE' , s:color.textDark    , 'NONE')
 call s:Hi('JavascriptExport'   , 'NONE' , 'NONE'              , 'bold')
 call s:Hi('JavascriptOpSymbol' , 'NONE' , s:color.lightViolet , 'NONE')
+call s:Hi('javascriptArrowFunc' , 'NONE' , s:color.lightYellow , 'NONE')
 hi! link JavascriptDotNotation javaScriptIdentifier
 hi! link JavascriptLogicSymbol JavascriptOpSymbol
 hi! link JavascriptOpSymbols JavascriptOpSymbol
@@ -243,6 +244,7 @@ call s:Hi('JsFuncBlock'     , 'NONE' , s:color.textDark    , 'NONE')
 call s:Hi('jsFuncCall'      , 'NONE' , s:color.lightBlue   , 'NONE')
 call s:Hi('jsGlobalObjects' , 'NONE' , 'NONE'              , 'bold')
 call s:Hi('jsOperator'      , 'NONE' , s:color.lightViolet , 'NONE')
+call s:Hi('jsArrowFunction' , 'NONE' , s:color.lightYellow , 'NONE')
 hi! link jsFunction javaScriptIdentifier
 hi! link jsNoise javaScriptIdentifier
 hi! link jsStorageClass javaScriptIdentifier
