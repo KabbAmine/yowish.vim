@@ -5,13 +5,14 @@ function! yowish#SetConfig() abort " {{{1
 		let g:yowish = {}
 	endif
 	let g:yowish = {
-				\ 'term_italic'  : !has_key(g:yowish, 'term_italic') ? 0 : g:yowish.term_italic,
-				\ 'ctrlp'        : !has_key(g:yowish, 'ctrlp')       ? 1 : g:yowish.ctrlp,
-				\ 'nerdtree'     : !has_key(g:yowish, 'nerdtree')    ? 1 : g:yowish.nerdtree,
-				\ 'agit'         : !has_key(g:yowish, 'agit')        ? 1 : g:yowish.agit,
-				\ 'unite'        : !has_key(g:yowish, 'unite')       ? 1 : g:yowish.unite,
-				\ 'signjk'       : !has_key(g:yowish, 'signjk')      ? 1 : g:yowish.signjk,
-				\ 'colors'       : !has_key(g:yowish, 'colors')      ? {} : g:yowish.colors
+				\ 'term_italic'    : !has_key(g:yowish, 'term_italic')    ? 0  : g:yowish.term_italic,
+				\ 'comment_italic' : !has_key(g:yowish, 'comment_italic') ? 0  : g:yowish.comment_italic,
+				\ 'ctrlp'          : !has_key(g:yowish, 'ctrlp')          ? 1  : g:yowish.ctrlp,
+				\ 'nerdtree'       : !has_key(g:yowish, 'nerdtree')       ? 1  : g:yowish.nerdtree,
+				\ 'agit'           : !has_key(g:yowish, 'agit')           ? 1  : g:yowish.agit,
+				\ 'unite'          : !has_key(g:yowish, 'unite')          ? 1  : g:yowish.unite,
+				\ 'signjk'         : !has_key(g:yowish, 'signjk')         ? 1  : g:yowish.signjk,
+				\ 'colors'         : !has_key(g:yowish, 'colors')         ? {} : g:yowish.colors
 			\ }
 	let g:yowish.colors = extend({
 				\ 'background'       : ['#222222','235'],

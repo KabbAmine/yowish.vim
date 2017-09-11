@@ -51,7 +51,11 @@ call s:Hi('String'    , 'NONE' , s:color.lightGreen  , 'NONE')
 hi! link Character String
 " Default {{{1
 call s:Hi('ColorColumn'  , s:color.backgroundDark   , s:color.yellow          , 'bold')
-call s:Hi('Comment'      , 'NONE'                   , s:color.comment         , 'italic')
+if g:yowish.comment_italic
+	call s:Hi('Comment'  , 'NONE'                   , s:color.comment         , 'italic')
+else
+	call s:Hi('Comment'  , 'NONE'                   , s:color.comment         , 'NONE')
+endif
 call s:Hi('Conceal'      , 'NONE'                   , s:color.backgroundLight , 'NONE')
 call s:Hi('CursorLineNr' , 'NONE'                   , s:color.lightYellow     , 'NONE')
 call s:Hi('CursorLine'   , s:color.backgroundLight  , 'NONE'                  , 'NONE')
