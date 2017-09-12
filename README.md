@@ -101,15 +101,17 @@ let g:yowish = {
 
 **Be sure to define options before loading the colorscheme**
 
-| key                       | default value                              | description                      |
-| ------------------------- | ----------------------------------------   | -------------------------------- |
-| `colors`                  | See [custom color palette](#custom-colors) | Color palette                    |
-| `term_italic`             | `0`                                        | Use italic in terminal           |
-| `ctrlp`                   | `1`                                        | Custom colors for CtrlP          |
-| `unite`                   | `1`                                        | Custom colors for Unite          |
-| `nerdtree`                | `1`                                        | Custom colors for NERDTree       |
-| `agit`                    | `1`                                        | Custom colors for Agit           |
-| `signjk`                  | `1`                                        | Custom colors for Signjk         |
+| key                       | default value                              | description                                                                                   |
+| ------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| `colors`                  | See [custom color palette](#custom-colors) | Color palette                                                                                 |
+| `term_italic`             | `0`                                        | Use italic in terminal                                                                        |
+| `comment_italic`          | `0`                                        | Use italic for comments                                                                       |
+| `spell_bad_color`         | `NONE`                                     | Change color for spell check errors. Use the color name from [color palette](#custom-colors)  |
+| `ctrlp`                   | `1`                                        | Custom colors for CtrlP                                                                       |
+| `unite`                   | `1`                                        | Custom colors for Unite                                                                       |
+| `nerdtree`                | `1`                                        | Custom colors for NERDTree                                                                    |
+| `agit`                    | `1`                                        | Custom colors for Agit                                                                        |
+| `signjk`                  | `1`                                        | Custom colors for Signjk                                                                      |
 
 #### Custom color palette <a id="custom-colors"></a>
 

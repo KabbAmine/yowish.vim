@@ -51,7 +51,11 @@ call s:Hi('String'    , 'NONE' , s:color.lightGreen  , 'NONE')
 hi! link Character String
 " Default {{{1
 call s:Hi('ColorColumn'  , s:color.backgroundDark   , s:color.yellow          , 'bold')
-call s:Hi('Comment'      , 'NONE'                   , s:color.comment         , 'NONE')
+if g:yowish.comment_italic
+	call s:Hi('Comment'  , 'NONE'                   , s:color.comment         , 'italic')
+else
+	call s:Hi('Comment'  , 'NONE'                   , s:color.comment         , 'NONE')
+endif
 call s:Hi('Conceal'      , 'NONE'                   , s:color.backgroundLight , 'NONE')
 call s:Hi('CursorLineNr' , 'NONE'                   , s:color.lightYellow     , 'NONE')
 call s:Hi('CursorLine'   , s:color.backgroundLight  , 'NONE'                  , 'NONE')
@@ -77,7 +81,10 @@ call s:Hi('Question'     , 'NONE'                   , s:color.lightGreen      , 
 call s:Hi('Search'       , s:color.yellow           , s:color.backgroundDark  , 'bold')
 call s:Hi('SpecialKey'   , 'NONE'                   , s:color.backgroundLight , 'NONE')
 call s:Hi('Special'      , 'NONE'                   , s:color.textLight       , 'NONE')
-call s:Hi('SpellBad'     , 'NONE'                   , 'NONE'                  , 'undercurl')
+
+let s:spell_bad_color = yowish#GetColorFor(g:yowish.spell_bad_color)
+call s:Hi('SpellBad'     , 'NONE'                   , s:spell_bad_color       , 'undercurl')
+
 call s:Hi('StatusLineNC' , s:color.backgroundLight  , s:color.text            , 'NONE')
 call s:Hi('StatusLine'   , s:color.yellow           , s:color.background      , 'NONE')
 call s:Hi('TabLineFill'  , 'NONE'                   , s:color.text            , 'NONE')
@@ -234,6 +241,7 @@ call s:Hi('javaScriptNumber'     , 'NONE' , s:color.lightRed    , 'NONE')
 call s:Hi('JavascriptBlock'    , 'NONE' , s:color.textDark    , 'NONE')
 call s:Hi('JavascriptExport'   , 'NONE' , 'NONE'              , 'bold')
 call s:Hi('JavascriptOpSymbol' , 'NONE' , s:color.lightViolet , 'NONE')
+call s:Hi('javascriptArrowFunc' , 'NONE' , s:color.lightYellow , 'NONE')
 hi! link JavascriptDotNotation javaScriptIdentifier
 hi! link JavascriptLogicSymbol JavascriptOpSymbol
 hi! link JavascriptOpSymbols JavascriptOpSymbol
@@ -243,6 +251,7 @@ call s:Hi('JsFuncBlock'     , 'NONE' , s:color.textDark    , 'NONE')
 call s:Hi('jsFuncCall'      , 'NONE' , s:color.lightBlue   , 'NONE')
 call s:Hi('jsGlobalObjects' , 'NONE' , 'NONE'              , 'bold')
 call s:Hi('jsOperator'      , 'NONE' , s:color.lightViolet , 'NONE')
+call s:Hi('jsArrowFunction' , 'NONE' , s:color.lightYellow , 'NONE')
 hi! link jsFunction javaScriptIdentifier
 hi! link jsNoise javaScriptIdentifier
 hi! link jsStorageClass javaScriptIdentifier
