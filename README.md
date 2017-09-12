@@ -145,7 +145,26 @@ The value of each key is a list containing:
 1. A hexadecimal color for GUI.
 2. The equivalent 256-color for supported terminals.
 
-An small example of customization [here](https://github.com/KabbAmine/yowish.vim/issues/6#issuecomment-211999905).
+Note that you can completely change the look, here is my personal custom palette:
+
+```vim
+let g:yowish.colors = {
+            \	'background'       : ['#2f343f', 'none'],
+            \	'backgroundDark'   : ['#191d27', '16'],
+            \	'backgroundLight'  : ['#464b5b', '59'],
+            \	'blue'             : ['#5295e2', '68'],
+            \	'comment'          : ['#5b6176', '242'],
+            \	'lightBlue'        : ['#e39f52', '179'],
+            \	'lightYellow'      : ['#80aee3', '110'],
+            \	'yellow'           : ['#5295e2', '68'],
+            \ }
+```
+
+And there is how it looks in gvim & terminal vim.
+
+![Gvim](https://github.com/KabbAmine/myVimFiles/blob/master/.img/myvim.jpg?raw=true)
+
+![Terminal vim](.img/custom_term.jpg)
 
 ## Screens <a id="screens"></a>
 

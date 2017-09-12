@@ -1,4 +1,4 @@
-" Modification: 2016-04-19
+" Modification: 2017-09-12
 
 function! yowish#SetConfig() abort " {{{1
 	if !exists('g:yowish')
