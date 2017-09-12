@@ -106,7 +106,7 @@ let g:yowish = {
 | `colors`                  | See [custom color palette](#custom-colors) | Color palette                                                                                 |
 | `term_italic`             | `0`                                        | Use italic in terminal                                                                        |
 | `comment_italic`          | `0`                                        | Use italic for comments                                                                       |
-| `spell_bad_color`         | `NONE`                                     | Change color for spell check errors. Use the color name from [color palette](#custom-colors)  |
+| `spell_bad_color`         | `NONE`                                     | Change foreground color for spell check errors (Use the color name from [color palette](#custom-colors))  |
 | `ctrlp`                   | `1`                                        | Custom colors for CtrlP                                                                       |
 | `unite`                   | `1`                                        | Custom colors for Unite                                                                       |
 | `nerdtree`                | `1`                                        | Custom colors for NERDTree                                                                    |
