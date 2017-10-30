@@ -162,7 +162,7 @@ let g:yowish.colors = {
 
 And there is how it looks in gvim & terminal vim.
 
-![Gvim](https://github.com/KabbAmine/myVimFiles/blob/master/.img/myvim.jpg?raw=true)
+![Gvim](https://github.com/KabbAmine/myVimFiles/blob/master/.img/my_vim.jpg?raw=true)
 
 ![Terminal vim](.img/custom_term.jpg)
 
