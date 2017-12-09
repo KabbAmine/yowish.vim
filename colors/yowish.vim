@@ -2,7 +2,7 @@
 
 " Version      : 0.7.3
 " Creation     : 2015-01-09
-" Modification : 2017-09-12
+" Modification : 2017-12-10
 " Maintainer   : Kabbaj Amine <amine.kabb@gmail.com>
 " License      : This file is placed in the public domain.
 
@@ -108,6 +108,9 @@ hi! link qfLineNr Statement
 hi! link qfSeparator qfLineNr
 hi! link SignColumn FoldColumn
 hi! link VisualNOS Visual
+if has('terminal')
+	call s:Hi('Terminal', s:color.backgroundDark, s:color.textDark, 'NONE')
+endif
 " Vim {{{1
 call s:Hi('vimAutoEvent' , 'NONE' , s:color.textExtraDark , 'NONE')
 call s:Hi('vimCommand'   , 'NONE' , s:color.lightRed      , 'NONE')
