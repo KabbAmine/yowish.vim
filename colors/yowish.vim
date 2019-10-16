@@ -70,7 +70,7 @@ call s:Hi('Error'        , 'NONE'                   , s:color.red             , 
 call s:Hi('FoldColumn'   , s:color.columnBackground , s:color.columnElements  , 'NONE')
 call s:Hi('Identifier'   , 'NONE'                   , s:color.lightBlue       , 'NONE')
 call s:Hi('IncSearch'    , s:color.lightYellow      , s:color.background      , 'NONE')
-call s:Hi('LineNr'       , 'NONE'                   , s:color.backgroundLight , 'NONE')
+call s:Hi('LineNr'       , 'NONE'                   , s:color.textDark        , 'NONE')
 call s:Hi('MatchParen'   , 'NONE'                   , s:color.yellow          , 'bold')
 call s:Hi('ModeMsg'      , 'NONE'                   , s:color.yellow          , 'bold')
 call s:Hi('Normal'       , s:color.background       , s:color.text            , 'NONE')
