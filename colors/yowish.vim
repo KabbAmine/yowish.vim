@@ -94,7 +94,7 @@ call s:Hi('Title'        , 'NONE'                   , s:color.lightRed        , 
 call s:Hi('Todo'         , 'NONE'                   , s:color.yellow          , 'NONE')
 call s:Hi('Type'         , 'NONE'                   , s:color.textDark        , 'NONE')
 call s:Hi('VertSplit'    , 'NONE'                   , s:color.yellow          , 'NONE')
-call s:Hi('Visual'       , s:color.selected         , 'NONE'                  , 'NONE')
+call s:Hi('Visual'       , s:color.selected         , s:color.backgroundDark  , 'NONE')
 call s:Hi('WarningMsg'   , 'NONE'                   , s:color.yellow          , 'bold')
 call s:Hi('WildMenu'     , s:color.background       , s:color.yellow          , 'NONE')
 hi! link CursorColumn CursorLine
