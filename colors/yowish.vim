@@ -92,7 +92,7 @@ call s:Hi('TabLine'      , s:color.backgroundLight  , s:color.textDark        , 
 call s:Hi('TabLineSel'   , s:color.background       , s:color.yellow          , 'bold')
 call s:Hi('Title'        , 'NONE'                   , s:color.lightRed        , 'NONE')
 call s:Hi('Todo'         , 'NONE'                   , s:color.yellow          , 'NONE')
-call s:Hi('Type'         , 'NONE'                   , s:color.textDark        , 'NONE')
+call s:Hi('Type'         , 'NONE'                   , s:color.lightYellow     , 'NONE')
 call s:Hi('VertSplit'    , 'NONE'                   , s:color.yellow          , 'NONE')
 call s:Hi('Visual'       , s:color.selected         , s:color.backgroundDark  , 'NONE')
 call s:Hi('WarningMsg'   , 'NONE'                   , s:color.yellow          , 'bold')
