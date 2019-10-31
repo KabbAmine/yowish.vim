@@ -27,7 +27,7 @@ function! yowish#SetConfig() abort " {{{1
 				\ 'lightViolet'      : ['#d09cea','171'],
 				\ 'lightYellow'      : ['#ffcc66','222'],
 				\ 'red'              : ['#f01d22','160'],
-				\ 'selected'         : ['#ffbe3c','215'],
+				\ 'selected'         : ['#ffcc66','222'],
 				\ 'text'             : ['#cbcbcb','251'],
 				\ 'textDark'         : ['#bebebe','249'],
 				\ 'textExtraDark'    : ['#8c8c8c','244'],
